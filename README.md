@@ -23,14 +23,14 @@ Once you create a new contract (quest) make sure to create a function in Main.so
 If the player wins make sure to _mint () a new ERC20 as per example in Main.sol. <br>
 
 
-For each function outside your own games please do write comments as shown below and to ensure consistency <br>
-
+<b>For each function outside your own games please do write comments as shown below and to ensure consistency </b> <br>
+```
 /**
 * @dev Use @dev for comments that are useful to the other devs.
 * @param Do explain all param required. All of them.
 * @notice If something needs to be noticed.
 */
-
+```
 ## Starter kit
 
 ### Register on Infura
