@@ -40,16 +40,5 @@ contract Players {
     delete(players[msg.sender].isPlayer);
   }
 
-  /**
-  * @dev This function is called by levelUp.
-  * @param _n The amount of token to burn.
-  * @notice This function will round the result to a multiple of 10 ** 18.
-  */
-  function isMultiple (uint256 _n) internal view returns (uint256) {
-    uint256 p = 10 ** 18;
-    uint256 t = p;
-    while(true) {
-        if (_n >= t+p) {t= t +p; } else {return t;}
-    }
-  }
+
 }
