@@ -3,14 +3,14 @@ import "../../Game_Controls/Players.sol";
 pragma solidity 0.6.2;
 
 interface playerContract {
-    function setStructData(address,uint256,string calldata,uint8 [5] calldata) external;
-    function getStructData() external returns (address,uint256,string memory, uint8[5] memory);
+    function setStructData(address,uint256,string calldata,uint256 [5] calldata) external;
+    function getStructData() external returns (address,uint256,string memory, uint256[5] memory);
 }
 
 
 contract Entrance {
 
-  function ent_0 (address _player, address _playerContractAddress) public returns (bool) {
+  function ent_0 (address _playerContractAddress) internal{
     /**
      * @dev Write a contract that has a function setStructData().
      * @dev In the same contract, write also a function getStructData().
@@ -26,7 +26,7 @@ contract Entrance {
      address a;
      uint256 b;
      string memory c;
-     uint8 [5] memory d;
+     uint256 [5] memory d;
 
 
      /**
@@ -35,7 +35,7 @@ contract Entrance {
      address check0;
      uint256 check1;
      string memory check2;
-     uint8 [5] memory check3;
+     uint256 [5] memory check3;
 
      (check0,check1,check2,check3) = antiHack();
      playerContract(_playerContractAddress).setStructData(check0,check1,check2,check3);
@@ -46,10 +46,9 @@ contract Entrance {
        ==
        keccak256(abi.encodePacked(a,b,c,d)), "Failed"
      );
-     return true;
   }
 
-  function antiHack () private returns (address,uint256,string memory,uint8 [5] memory){
+  function antiHack () private view returns (address,uint256,string memory,uint256 [5] memory){
 
     // 3 random strings
     string memory x = "Ivan on tech bootcamp";
@@ -58,15 +57,11 @@ contract Entrance {
     uint256 shuffleStrings = now%3;
 
     // Creating a randomly populated array
-    uint8[5] memory a;
-    uint8 i = 0;
+    uint256[5] memory a;
+    uint256 i = 0;
 
     while (i < 5){
-      if (now%2 == 0) {
-        a[i] = 0;
-      } else {
-        a[i] = 1;
-      }
+      a[i] = now+i;
       i++;
     }
 
