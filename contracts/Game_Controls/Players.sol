@@ -1,22 +1,26 @@
+import "@openzeppelin/contracts/math/SafeMath.sol";
+import "@openzeppelin/contracts/utils/Counters.sol";
+import "./Bank.sol";
+
 pragma solidity 0.6.2;
 
 contract Players {
 
-  /**
-  * isPlayer is true if player is registered. False otherwise.
-  */
-  mapping (address => bool) isPlayer;
+  using SafeMath for uint256;
 
-  /**
-  * @dev Each IRT grants 1 level.
-  */
-  mapping (address => uint256) playerLevel;
+  struct P {
+    bool isPlayer;
+    uint256 playerLevel;
+    uint256 [] completeLevels;
+  }
+
+  mapping (address => P) public players;
 
   /**
   * @dev Require player is registered.
   */
   modifier onlyPlayer () {
-    require (isPlayer[msg.sender] == true,"No such player");
+    require (players[msg.sender].isPlayer == true,"No such player");
     _;
   }
 
@@ -26,28 +30,14 @@ contract Players {
   */
   function addPlayer () public payable {
     require (msg.value == 1 ether,"Register a new player costs 1 ether");
-    isPlayer[msg.sender] = true;
+    players[msg.sender].isPlayer = true;
   }
 
   /**
   * @dev A player can disable itself.
   */
   function removePlayer () public onlyPlayer {
-    isPlayer[msg.sender] = false;
-  }
-
-  /**
-  * @dev Each IRT grants 1 level.
-  * @param _amount Has to be 10 ** 18 or mutiple.
-  * @notice _amount 1.2 IRT will result in 1 ERT burnt.
-  */
-  function levelUp (uint256 _amount) public onlyPlayer {
-    require (_amount >= 10 ** 18);
-    uint256 amountToBurn = isMultiple(_amount);
-    require (burnIRT(amountToBurn));
-    uint256 increase = amountToBurn / 10 ** 18;
-    playerLevel[msg.sender] += increase;
-
+    delete(players[msg.sender].isPlayer);
   }
 
   /**
@@ -55,9 +45,9 @@ contract Players {
   * @param _n The amount of token to burn.
   * @notice This function will round the result to a multiple of 10 ** 18.
   */
-  function isMultiple (uint256 _n) public view returns (uint256) {
+  function isMultiple (uint256 _n) internal view returns (uint256) {
     uint256 p = 10 ** 18;
-    uint256 t = 10 ** 18;
+    uint256 t = p;
     while(true) {
         if (_n >= t+p) {t= t +p; } else {return t;}
     }
