@@ -1,5 +1,6 @@
-import "./Easy/Entrance.sol";
-import "./Easy/TheGreatHall.sol";
+import "./Easy/Level_0.sol";
+import "./Easy/Level_1.sol";
+import "./Easy/Level_2.sol";
 import "../Game_Controls/Players.sol";
 import "../Game_Controls/Bank.sol";
 import "@openzeppelin/contracts/math/SafeMath.sol";
@@ -13,7 +14,7 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 
 pragma solidity 0.6.2;
 
-contract Main is Players, Entrance, TheGreatHall, Bank{
+contract Main is Players, Entrance, TheGreatHall, Bank, ThinkBig{
 
   using SafeMath for uint256;
 
@@ -28,25 +29,35 @@ contract Main is Players, Entrance, TheGreatHall, Bank{
   constructor () Bank() public {}
 
   /**
-  * @dev Contract can be found in Game > Easy.
+  * @dev Contract can be found in Game > Easy > Level_0.
   * @dev lvl = 0;
   */
-  function play_ent0 (address _playerContractAddress) public onlyPlayer {
+  function playLevel0 (address _playerContractAddress) public onlyPlayer {
     ent_0(_playerContractAddress);
     canPay(0);
-
   }
 
   /**
-  * @dev Contract can be found in Game > Easy.
+  * @dev Contract can be found in Game > Easy > Level_1.
   * @dev lvl = 1;
   */
-  function play_tgh () public onlyPlayer {
+  function playLevel1 () public onlyPlayer {
     if (timer[msg.sender] >= now) {
       canPay(1);
     } else {
       reset (msg.sender);
     }
+  }
+
+  /**
+  * @dev Contract can be found in Game > Easy > Level_2.
+  * @dev lvl = 2;
+  */
+  function playLevel2 (uint256 _n) public onlyPlayer {
+    bool check;
+    check = go(_n);
+    require (check);
+    canPay(2);
   }
 
   /**
@@ -76,16 +87,4 @@ contract Main is Players, Entrance, TheGreatHall, Bank{
     players[msg.sender].playerLevel.add(increase);
   }
 
-  /**
-  * @dev This function is called by levelUp.
-  * @param _n The amount of token to burn.
-  * @notice This function will round the result to a multiple of 10 ** 18.
-  */
-  function isMultiple (uint256 _n) internal view returns (uint256) {
-    uint256 p = 10 ** 18;
-    uint256 t = p;
-    while(true) {
-        if (_n >= t+p) {t= t +p; } else {return t;}
-    }
-  }
 }
