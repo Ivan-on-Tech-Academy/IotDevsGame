@@ -19,7 +19,7 @@ contract Entrance {
   playerContract usr = playerContract (0x0);
 
 
-  function ent_0 (address _playerContractAddress) public returns (bool){
+  function ent_0 (address _playerContractAddress) internal returns (bool){
     setInterface(_playerContractAddress);
     player[msg.sender].targetAddress = randomAddress();
     usr.setData(player[msg.sender].targetAddress);
@@ -27,7 +27,7 @@ contract Entrance {
     return true;
   }
 
-  function setInterface (address _playerContractAddress) internal {
+  function setInterface (address _playerContractAddress) private {
       usr = playerContract(_playerContractAddress);
   }
 
