@@ -1,36 +1,26 @@
-import "./Easy/Level_0.sol";
-import "./Easy/Level_1.sol";
-import "./Easy/Level_2.sol";
+import "./utils/Imports.sol";
 import "../Game_Controls/Players.sol";
 import "../Game_Controls/Bank.sol";
 import "@openzeppelin/contracts/math/SafeMath.sol";
-import "@openzeppelin/contracts/utils/Counters.sol";
 
 /**
 * @dev Player must registere itself to play.
 *      Player must call addPlayer().
 */
 
-
 pragma solidity 0.6.2;
 
-contract Main is Players, Entrance, TheGreatHall, Bank, ThinkBig{
+contract Main is Players, Bank, Imports {
 
   using SafeMath for uint256;
 
-  /**
-  * @dev A mapping for completed lvl => address _player.
-  *      Avoid multiple payements for each level.
-  */
-  mapping (address => uint256) public completedLevels;
-
-  uint256 constant rewardAmount = 10 ** 18;
+  uint256 constant rewardAmount = 10 ** 19; // 10 tokens
 
   constructor () Bank() public {}
 
   /**
-  * @dev Contract can be found in Game > Easy > Level_0.
-  * @dev lvl = 0;
+  * @dev Contract can be found in Game > Levels > Level_0.
+  *      lvl = 0;
   */
   function playLevel0 (address _playerContractAddress) public onlyPlayer {
     ent_0(_playerContractAddress);
@@ -38,8 +28,8 @@ contract Main is Players, Entrance, TheGreatHall, Bank, ThinkBig{
   }
 
   /**
-  * @dev Contract can be found in Game > Easy > Level_1.
-  * @dev lvl = 1;
+  * @dev Contract can be found in Game > Levels > Level_1.
+  *      lvl = 1;
   */
   function playLevel1 () public onlyPlayer {
     if (timer[msg.sender] >= now) {
@@ -50,8 +40,8 @@ contract Main is Players, Entrance, TheGreatHall, Bank, ThinkBig{
   }
 
   /**
-  * @dev Contract can be found in Game > Easy > Level_2.
-  * @dev lvl = 2;
+  * @dev Contract can be found in Game > Levels > Level_2.
+  *      lvl = 2;
   */
   function playLevel2 (uint256 _n) public onlyPlayer {
     bool check;
@@ -61,12 +51,37 @@ contract Main is Players, Entrance, TheGreatHall, Bank, ThinkBig{
   }
 
   /**
+  * @dev Contract can be found in Game > Levels > Level_3.
+  *      lvl = 3;
+  */
+  function playLevel3 (address _owner) public onlyPlayer {
+    bool check;
+    check = findIt(_owner);
+    require (check);
+    canPay(3);
+  }
+
+  /**
+  * @dev Contract can be found in Game > Levels > Level_4.
+  *      lvl = 4;
+  */
+  function playLevel4 (address _playerContractAddress) public onlyPlayer {
+    bool check;
+    check = playERC(_playerContractAddress);
+    require (check);
+    canPay(4);
+  }
+
+  /**
   * @dev Verify that the _lvlN is not completed already.
   *      Each time a level is completed and the IRT token is mint,
   *      completedLevels get the _lvlN pushed.
   *      It avoids muiltiple minting for the same level.
+  * @notice verifyCapOverflow() makes sure that no token is minted if
+  *         it overflows total token cap.
   */
   function canPay (uint256 _lvlN) private {
+    verifyCapOverflow(rewardAmount);
     for (uint256 i=0;i<players[msg.sender].completeLevels.length;i++){
       if(players[msg.sender].completeLevels[i]==_lvlN){revert();}
     }

@@ -1,5 +1,4 @@
 import "@openzeppelin/contracts/math/SafeMath.sol";
-import "@openzeppelin/contracts/utils/Counters.sol";
 import "./Bank.sol";
 
 pragma solidity 0.6.2;
