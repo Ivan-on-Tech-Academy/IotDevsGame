@@ -24,46 +24,51 @@ contract Bank is ERC20, Stake {
   }
 
   function startStaking (uint256 _amount, uint256 _nOfDays) public {
-    increaseAllowance(address(this),_amount);
-    transfer(address(this),_amount);
+    increaseAllowance(msg.sender,_amount);
+    transferFrom(msg.sender,address(this),_amount);
     _startStaking (_amount,_nOfDays);
   }
 
   function endStaking () public {
     uint256 toMint = _endStaking();
-    _mint(address(this),toMint);
-    staking[msg.sender].amountStaked = staking[msg.sender].amountStaked.add(toMint);
-    uint256 toTransfer = staking[msg.sender].amountStaked;
+    mintIRT(address(this),toMint);
+    uint256 toTransfer = staking[msg.sender].amountStaked.add(toMint);
     delete (staking[msg.sender]);
-    transfer(msg.sender,toTransfer);
+    this.transfer(msg.sender,toTransfer);
   }
 
+  // Mock functions for testing purpose //
+
+  function testEndStaking (uint _days) public {
+    uint256 toMint = _endStakingTest(_days);
+    mintIRT(address(this),toMint);
+    uint256 toTransfer = staking[msg.sender].amountStaked.add(toMint);
+    delete (staking[msg.sender]);
+    this.transfer(msg.sender,toTransfer);
+  }
+
+  function mintLotsOfTokens () public {
+    verifyCapOverflow (100000000 * (10 ** 18) + 1);
+  }
+
+  // End of mock functions //
+
+  function mintIRT (address _to, uint256 _amount) internal {
+    verifyCapOverflow(_amount);
+    _mint(_to,_amount);
+  }
 
   /**
   * @dev Verify that mint() does not exceed the total token cap.
   */
-  function verifyCapOverflow (uint256 _amountToMint) internal {
-    require (totalSupply().add(_amountToMint) <= totalCap, "Cap overlow, mint reversed");
+  function verifyCapOverflow (uint256 _amount) private {
+    require (totalSupply().add(_amount) <= totalCap, "Cap overlow, mint reversed");
   }
 
-  function burnIRT (uint256 _amount) internal returns (bool){
-    increaseAllowance (address(this),_amount);
+  function burnIRT (uint256 _amount) internal {
+    increaseAllowance(msg.sender,_amount);
     _burn (msg.sender,_amount);
     totalCap = totalCap.sub(_amount);
-    return true;
-  }
-
-  /**
-  * @dev This function is called by levelUp.
-  * @param _n The amount of token to burn.
-  * @notice This function will round the result to a multiple of 10 ** 18.
-  */
-  function isMultiple (uint256 _n) internal view returns (uint256) {
-    uint256 p = 10 ** 18;
-    uint256 t = p;
-    while(true) {
-        if (_n >= t+p) {t= t +p; } else {return t;}
-    }
   }
 
 }

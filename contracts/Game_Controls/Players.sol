@@ -6,14 +6,15 @@ pragma solidity 0.6.2;
 contract Players {
 
   using SafeMath for uint256;
+  using SafeMath for uint16;
 
-  struct P {
-    bool isPlayer;
+  struct Player {
     uint256 playerLevel;
-    uint256 [] completeLevels;
+    mapping(uint => bool) completeLevels;
+    bool isPlayer;
   }
 
-  mapping (address => P) public players;
+  mapping (address => Player) public players;
 
   /**
   * @dev Require player is registered.
