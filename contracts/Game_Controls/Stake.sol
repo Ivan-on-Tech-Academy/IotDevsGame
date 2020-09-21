@@ -27,4 +27,13 @@ contract Stake {
     uint256 toMint = ((staking[msg.sender].amountStaked*YearlyStakeInterest/100)/365)*timeStakedDays;
     return toMint;
   }
+
+  // Mock function for testing purpose //
+  
+  function _endStakingTest (uint _days) internal returns (uint256) {
+    require (staking[msg.sender].endTime + _days * 1 days >= now);
+    uint256 timeStakedDays = (staking[msg.sender].endTime.sub(staking[msg.sender].startTime)).div(1 days);
+    uint256 toMint = ((staking[msg.sender].amountStaked*YearlyStakeInterest/100)/365)*timeStakedDays;
+    return toMint;
+  }
 }

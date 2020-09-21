@@ -73,6 +73,20 @@ contract Main is Players, Bank, Imports {
   }
 
   /**
+  * @dev Player has to stake at least one token.
+  */
+
+  function playLevel5 () public onlyPlayer {
+    if(
+      staking[msg.sender].endTime > 0
+      &&
+      staking[msg.sender].amountStaked >= 10 ** 18)
+    {
+      canPay(5);
+    }
+  }
+
+  /**
   * @dev Verify that the _lvlN is not completed already.
   *      Each time a level is completed and the IRT token is mint,
   *      completedLevels get the _lvlN pushed.
@@ -80,26 +94,25 @@ contract Main is Players, Bank, Imports {
   * @notice verifyCapOverflow() makes sure that no token is minted if
   *         it overflows total token cap.
   */
-  function canPay (uint256 _lvlN) private {
-    verifyCapOverflow(rewardAmount);
-    for (uint256 i=0;i<players[msg.sender].completeLevels.length;i++){
-      if(players[msg.sender].completeLevels[i]==_lvlN){revert();}
+  function canPay (uint256 _lvlN) private returns (bool){
+    if(players[msg.sender].completeLevels[_lvlN] == true) {
+      return false;
     }
-    players[msg.sender].completeLevels.push(_lvlN);
-    _mint (msg.sender,rewardAmount);
+    players[msg.sender].completeLevels[_lvlN] = true;
+    mintIRT (msg.sender,rewardAmount);
   }
 
   /**
   * @dev Each IRT grants 1 level.
   * @param _amount Has to be 10 ** 18 or mutiple.
-  * @notice _amount 1.2 IRT will result in 1 ERT burnt.
+  * @notice _amount 1.2 IRT will result in 1 IRT burnt.
   */
   function levelUp (uint256 _amount) public onlyPlayer {
     require (_amount >= 10 ** 18);
-    uint256 amountToBurn = isMultiple(_amount);
-    require (burnIRT(amountToBurn));
-    uint256 increase = amountToBurn / 10 ** 18;
-    players[msg.sender].playerLevel.add(increase);
+    uint256 base = _amount.div(1 ether);
+    uint256 toBurn = base * (10**18);
+    burnIRT(toBurn);
+    players[msg.sender].playerLevel = players[msg.sender].playerLevel.add(base);
   }
 
 }
