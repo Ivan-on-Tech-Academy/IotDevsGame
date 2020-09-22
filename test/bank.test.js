@@ -49,7 +49,6 @@ contract('Main', (accounts) => {
 
     it('Should allow staking', async () => {
       let ercBalanceA0 =  await instance.balanceOf(accounts[0]);
-      console.log('A[0] has: ' + ercBalanceA0);
       await instance.startStaking(ercBalanceA0,10);
     })
 
@@ -68,10 +67,6 @@ contract('Main', (accounts) => {
 
       let amountStaked = (StakeIt.amountStaked);
       assert.equal(amountStaked,oneToken,'wrong amount staked');
-      ercBalanceA0 =  await instance.balanceOf(accounts[0]);
-      console.log('A[0] has: ' + ercBalanceA0);
-      ercBalanceBank =  await instance.balanceOf(instance.address);
-      console.log('Bank has: ' + ercBalanceBank);
     })
 
     it('Should end staking and return funds', async () => {
@@ -79,11 +74,9 @@ contract('Main', (accounts) => {
 
       let ercBalanceA0 =  await instance.balanceOf(accounts[0]);
       assert(ercBalanceA0 > oneToken,'ERC token not returned or 0 interest');
-      console.log('A[0] has: ' + ercBalanceA0);
 
       let ercBalanceBank = await instance.balanceOf(instance.address);
       assert.equal(ercBalanceBank,0,'ERC token not returned');
-      console.log('Bank has: ' + ercBalanceBank);
     })
 
     it('Should level up accounts[0]', async () => {
@@ -100,14 +93,13 @@ contract('Main', (accounts) => {
       assert(newErcBalanceA0.toNumber() >= ercBalanceA0-oneToken,'mismatch in burning function'); // >= to avoid rounding from JS //
     })
 
+    it('Should have decreased the total cap when user lvl up', async() =>{
+      let totalCap = await instance.getTotalCap();
+      assert(totalCap < 100000000 * (10 ** 18), 'total cap not decreased');
+    })
+
     it('Should not overflow the total cap', async () => {
       truffleAssert.fails(instance.mintLotsOfTokens(),"Cap overlow, mint reversed");
     })
-
-
   })
-
-
-
-
 })

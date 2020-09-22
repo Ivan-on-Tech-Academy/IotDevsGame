@@ -1,26 +1,27 @@
 pragma solidity 0.6.2;
 
-interface ERC20Game {
-  function symbol() external view returns (string memory);
-  function balanceOf(address tokenOwner) external view returns (uint balance);
-}
+// owner of USDT: 0xdAC17F958D2ee523a2206206994597C13D831ec7
 
 /**
-* @dev Create a contract that mints 1 ERC20 token to the address of this contract.
-* @dev Once your contract has been created and the erc minted, call the function in main.
-* @notice your ERC20 token symbol must be 'XYZ'.
-*
+* @dev Because the blockchain is public, you can see who's the owner of the contract
+* address above.
+* One way to do this is to call the function getOwner().
+* The function below accepts a parameter _address which has to be the owner of the contract.
+* The level is completed if the hashing of the address is equal to: 0x61251af2a34c4b856276127a6d85e236c257545c8bd5011ac4f0c05c15327a7d
 */
 
-contract TestERC20  {
 
-  bytes32 constant symbolResult = 0x27fd9bb70fcea8125f7e0ba4eaeda4fb5ff28f5535e452dc1b70a42f567f4d75;
+contract FindTheOwner {
 
-  function playERC (address _ercImplementation) internal view returns (bool) {
-    ERC20Game impl = ERC20Game(_ercImplementation);
-    bytes32 sym = keccak256(abi.encodePacked(impl.symbol()));
-    uint balance = impl.balanceOf(address(this));
-    require (sym == symbolResult && balance == 10**18 );
+  bytes32 constant result = 0x61251af2a34c4b856276127a6d85e236c257545c8bd5011ac4f0c05c15327a7d;
+
+  function findIt (address _owner) internal pure returns (bool) {
+    bytes32 res = hash(_owner);
+    require (res == result,"not matching");
     return true;
+  }
+
+  function hash (address _owner) private pure returns (bytes32) {
+    return keccak256(abi.encodePacked(_owner));
   }
 }
