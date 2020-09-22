@@ -1,37 +1,30 @@
 pragma solidity 0.6.2;
 
-interface playerContract {
-    function setData(address) external returns (bool);
-}
+import "@openzeppelin/contracts/math/SafeMath.sol";
 
-/**
-* @dev Player has to create a contract that includes a function setData(),
-*      this function will receive a randomly generated address.
-*      The player has to send any amount of ether to that address.
-*/
+contract TakeOwneship {
 
-contract Entrance {
+  using SafeMath for uint256;
 
-  struct playerStruct {
-    address  targetAddress;
-  }
-  mapping (address => playerStruct) public player;
-  playerContract usr = playerContract (0x0);
+  mapping (address => bool) owners;
+  mapping (address => uint256) deposits;
 
-
-  function ent_0 (address _playerContractAddress) internal returns (bool){
-    setInterface(_playerContractAddress);
-    player[msg.sender].targetAddress = randomAddress();
-    usr.setData(player[msg.sender].targetAddress);
-    require (address(player[msg.sender].targetAddress).balance > 0,"Target balance should be > than 0");
-    return true;
+  modifier onlyOwners () {
+    require (owners[msg.sender] == true);
+    _;
   }
 
-  function setInterface (address _playerContractAddress) private {
-      usr = playerContract(_playerContractAddress);
+  function deposit () public payable {
+    deposits[msg.sender] = deposits[msg.sender].add(msg.value);
   }
 
-  function randomAddress () private view returns (address){
-      return address(uint160(uint256(now)));
-    }
+  function _withdraw () private onlyOwners {
+    msg.sender.transfer(deposits[msg.sender]);
+  }
+
+  function claimOwnership () public {
+    require (deposits[msg.sender] > 0.1 ether);
+    owners[msg.sender] = true;
+    _withdraw();
+  }
 }

@@ -18,6 +18,11 @@ contract Main is Players, Bank, Imports {
 
   constructor () Bank() public {}
 
+  function welcome (uint256 _password) public onlyPlayer {
+    bool result = _welcomePlayer(_password);
+    if (result == true) canPay(0);
+  }
+
   /**
   * @dev Contract can be found in Game > Levels > Level_0.
   *      lvl = 0;
@@ -72,18 +77,8 @@ contract Main is Players, Bank, Imports {
     canPay(4);
   }
 
-  /**
-  * @dev Player has to stake at least one token.
-  */
-
   function playLevel5 () public onlyPlayer {
-    if(
-      staking[msg.sender].endTime > 0
-      &&
-      staking[msg.sender].amountStaked >= 10 ** 18)
-    {
-      canPay(5);
-    }
+
   }
 
   /**
