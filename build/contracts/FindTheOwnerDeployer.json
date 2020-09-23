@@ -1,0 +1,1204 @@
+{
+  "contractName": "FindTheOwnerDeployer",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "newInstance",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_instance",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_player",
+          "type": "address"
+        }
+      ],
+      "name": "check",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.2+commit.bacdbe57\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_instance\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_player\",\"type\":\"address\"}],\"name\":\"check\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"newInstance\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/dan/Documents/Coding/Solidity/New_Projects/Contracts/IotDevsGame/contracts/Game/Levels/Level_4_Deployer.sol\":\"FindTheOwnerDeployer\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/dan/Documents/Coding/Solidity/New_Projects/Contracts/IotDevsGame/contracts/Game/Levels/Level_4.sol\":{\"keccak256\":\"0x6cc7d76265513fd370c194ecf02e31ff6f62f682c9021154ee8ca02887d745b8\",\"urls\":[\"bzz-raw://46a34cdc9821270ff036659af3117bb1f9d68168a74eb672eab74d20e1e9c854\",\"dweb:/ipfs/QmV1UhMsQHu4NEo7WGmX3UdZ3tG7fXzsTfYRGwmorBEuDu\"]},\"/Users/dan/Documents/Coding/Solidity/New_Projects/Contracts/IotDevsGame/contracts/Game/Levels/Level_4_Deployer.sol\":{\"keccak256\":\"0xce455bca61191974d26e71ac87dd6df3c6b4eaf04e3f1a6b429f203ce83d056d\",\"urls\":[\"bzz-raw://205a7d82ced7cf73057df05fb50dc9be8cd3a1eca55983233f2a18b6eff6ce26\",\"dweb:/ipfs/QmVsqJtDfC76rsMnRJP4bCffQAfw7Bbjw9pnehRsuxS7y8\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506102c2806100206000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c80635219cfa51461003b578063b3154db014610085575b600080fd5b610043610101565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6100e76004803603604081101561009b57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610136565b604051808215151515815260200191505060405180910390f35b600080604051610110906101cd565b604051809103906000f08015801561012c573d6000803e3d6000fd5b5090508091505090565b600080839050600115158173ffffffffffffffffffffffffffffffffffffffff16639d9a7fe96040518163ffffffff1660e01b815260040160206040518083038186803b15801561018657600080fd5b505afa15801561019a573d6000803e3d6000fd5b505050506040513d60208110156101b057600080fd5b810190808051906020019092919050505015151491505092915050565b60b3806101da8339019056fe6080604052348015600f57600080fd5b5060958061001e6000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c80639d9a7fe914602d575b600080fd5b6033604d565b604051808215151515815260200191505060405180910390f35b6000809054906101000a900460ff168156fea2646970667358221220f618d9d3a41f2c5970f1008280711d01fadf40e8b41347642a7bd71bfc73692064736f6c63430006020033a2646970667358221220371c8f28674e45b52ec2a9f6fef0a6a291607e188ddba3d74d682128c6bf7e2d64736f6c63430006020033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c80635219cfa51461003b578063b3154db014610085575b600080fd5b610043610101565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6100e76004803603604081101561009b57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610136565b604051808215151515815260200191505060405180910390f35b600080604051610110906101cd565b604051809103906000f08015801561012c573d6000803e3d6000fd5b5090508091505090565b600080839050600115158173ffffffffffffffffffffffffffffffffffffffff16639d9a7fe96040518163ffffffff1660e01b815260040160206040518083038186803b15801561018657600080fd5b505afa15801561019a573d6000803e3d6000fd5b505050506040513d60208110156101b057600080fd5b810190808051906020019092919050505015151491505092915050565b60b3806101da8339019056fe6080604052348015600f57600080fd5b5060958061001e6000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c80639d9a7fe914602d575b600080fd5b6033604d565b604051808215151515815260200191505060405180910390f35b6000809054906101000a900460ff168156fea2646970667358221220f618d9d3a41f2c5970f1008280711d01fadf40e8b41347642a7bd71bfc73692064736f6c63430006020033a2646970667358221220371c8f28674e45b52ec2a9f6fef0a6a291607e188ddba3d74d682128c6bf7e2d64736f6c63430006020033",
+  "sourceMap": "49:346:11:-:0;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;49:346:11;;;;;;;",
+  "deployedSourceMap": "49:346:11:-:0;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;49:346:11;;;;;;;;;;;;;;;;;;;;;;;;84:132;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;220:173;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;220:173:11;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;84:132;124:7;139:21;163:18;;;;;:::i;:::-;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;163:18:11;139:42;;202:8;187:24;;;84:132;:::o;220:173::-;288:4;300:21;337:9;300:47;;384:4;360:28;;:8;:18;;;:20;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;360:20:11;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;360:20:11;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;360:20:11;;;;;;;;;;;;;;;;:28;;;353:35;;;220:173;;;;:::o;49:346::-;;;;;;;;:::o",
+  "source": "pragma solidity 0.6.2;\n\nimport './Level_4.sol';\n\ncontract FindTheOwnerDeployer {\n\n  function newInstance () public returns (address) {\n    FindTheOwner instance = new FindTheOwner();\n    return address(instance);\n  }\n\n  function check (address _instance, address _player) public returns (bool) {\n    FindTheOwner instance = FindTheOwner(_instance);\n    return instance.completed() == true;\n  }\n}\n",
+  "sourcePath": "/Users/dan/Documents/Coding/Solidity/New_Projects/Contracts/IotDevsGame/contracts/Game/Levels/Level_4_Deployer.sol",
+  "ast": {
+    "absolutePath": "/Users/dan/Documents/Coding/Solidity/New_Projects/Contracts/IotDevsGame/contracts/Game/Levels/Level_4_Deployer.sol",
+    "exportedSymbols": {
+      "FindTheOwnerDeployer": [
+        830
+      ]
+    },
+    "id": 831,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 789,
+        "literals": [
+          "solidity",
+          "0.6",
+          ".2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:22:11"
+      },
+      {
+        "absolutePath": "/Users/dan/Documents/Coding/Solidity/New_Projects/Contracts/IotDevsGame/contracts/Game/Levels/Level_4.sol",
+        "file": "./Level_4.sol",
+        "id": 790,
+        "nodeType": "ImportDirective",
+        "scope": 831,
+        "sourceUnit": 788,
+        "src": "24:23:11",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [
+          787
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 830,
+        "linearizedBaseContracts": [
+          830
+        ],
+        "name": "FindTheOwnerDeployer",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 806,
+              "nodeType": "Block",
+              "src": "133:83:11",
+              "statements": [
+                {
+                  "assignments": [
+                    796
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 796,
+                      "name": "instance",
+                      "nodeType": "VariableDeclaration",
+                      "overrides": null,
+                      "scope": 806,
+                      "src": "139:21:11",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_FindTheOwner_$787",
+                        "typeString": "contract FindTheOwner"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 795,
+                        "name": "FindTheOwner",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 787,
+                        "src": "139:12:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_FindTheOwner_$787",
+                          "typeString": "contract FindTheOwner"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 800,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 798,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "NewExpression",
+                      "src": "163:16:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_creation_nonpayable$__$returns$_t_contract$_FindTheOwner_$787_$",
+                        "typeString": "function () returns (contract FindTheOwner)"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 797,
+                        "name": "FindTheOwner",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 787,
+                        "src": "167:12:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_FindTheOwner_$787",
+                          "typeString": "contract FindTheOwner"
+                        }
+                      }
+                    },
+                    "id": 799,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "163:18:11",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_FindTheOwner_$787",
+                      "typeString": "contract FindTheOwner"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "139:42:11"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 803,
+                        "name": "instance",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 796,
+                        "src": "202:8:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_FindTheOwner_$787",
+                          "typeString": "contract FindTheOwner"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_FindTheOwner_$787",
+                          "typeString": "contract FindTheOwner"
+                        }
+                      ],
+                      "id": 802,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "ElementaryTypeNameExpression",
+                      "src": "194:7:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_address_$",
+                        "typeString": "type(address)"
+                      },
+                      "typeName": {
+                        "id": 801,
+                        "name": "address",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "194:7:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": null,
+                          "typeString": null
+                        }
+                      }
+                    },
+                    "id": 804,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "194:17:11",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 794,
+                  "id": 805,
+                  "nodeType": "Return",
+                  "src": "187:24:11"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "5219cfa5",
+            "id": 807,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "newInstance",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 791,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "105:2:11"
+            },
+            "returnParameters": {
+              "id": 794,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 793,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 807,
+                  "src": "124:7:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 792,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "124:7:11",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "123:9:11"
+            },
+            "scope": 830,
+            "src": "84:132:11",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 828,
+              "nodeType": "Block",
+              "src": "294:99:11",
+              "statements": [
+                {
+                  "assignments": [
+                    817
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 817,
+                      "name": "instance",
+                      "nodeType": "VariableDeclaration",
+                      "overrides": null,
+                      "scope": 828,
+                      "src": "300:21:11",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_FindTheOwner_$787",
+                        "typeString": "contract FindTheOwner"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 816,
+                        "name": "FindTheOwner",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 787,
+                        "src": "300:12:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_FindTheOwner_$787",
+                          "typeString": "contract FindTheOwner"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 821,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 819,
+                        "name": "_instance",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 809,
+                        "src": "337:9:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 818,
+                      "name": "FindTheOwner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 787,
+                      "src": "324:12:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_contract$_FindTheOwner_$787_$",
+                        "typeString": "type(contract FindTheOwner)"
+                      }
+                    },
+                    "id": 820,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "324:23:11",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_FindTheOwner_$787",
+                      "typeString": "contract FindTheOwner"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "300:47:11"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "id": 826,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "arguments": [],
+                      "expression": {
+                        "argumentTypes": [],
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 822,
+                          "name": "instance",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 817,
+                          "src": "360:8:11",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_FindTheOwner_$787",
+                            "typeString": "contract FindTheOwner"
+                          }
+                        },
+                        "id": 823,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "completed",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 745,
+                        "src": "360:18:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_external_view$__$returns$_t_bool_$",
+                          "typeString": "function () view external returns (bool)"
+                        }
+                      },
+                      "id": 824,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "360:20:11",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "hexValue": "74727565",
+                      "id": 825,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "384:4:11",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "true"
+                    },
+                    "src": "360:28:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 815,
+                  "id": 827,
+                  "nodeType": "Return",
+                  "src": "353:35:11"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "b3154db0",
+            "id": 829,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "check",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 812,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 809,
+                  "name": "_instance",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 829,
+                  "src": "236:17:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 808,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "236:7:11",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 811,
+                  "name": "_player",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 829,
+                  "src": "255:15:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 810,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "255:7:11",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "235:36:11"
+            },
+            "returnParameters": {
+              "id": 815,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 814,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 829,
+                  "src": "288:4:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 813,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "288:4:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "287:6:11"
+            },
+            "scope": 830,
+            "src": "220:173:11",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 831,
+        "src": "49:346:11"
+      }
+    ],
+    "src": "0:396:11"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/dan/Documents/Coding/Solidity/New_Projects/Contracts/IotDevsGame/contracts/Game/Levels/Level_4_Deployer.sol",
+    "exportedSymbols": {
+      "FindTheOwnerDeployer": [
+        830
+      ]
+    },
+    "id": 831,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 789,
+        "literals": [
+          "solidity",
+          "0.6",
+          ".2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:22:11"
+      },
+      {
+        "absolutePath": "/Users/dan/Documents/Coding/Solidity/New_Projects/Contracts/IotDevsGame/contracts/Game/Levels/Level_4.sol",
+        "file": "./Level_4.sol",
+        "id": 790,
+        "nodeType": "ImportDirective",
+        "scope": 831,
+        "sourceUnit": 788,
+        "src": "24:23:11",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [
+          787
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 830,
+        "linearizedBaseContracts": [
+          830
+        ],
+        "name": "FindTheOwnerDeployer",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 806,
+              "nodeType": "Block",
+              "src": "133:83:11",
+              "statements": [
+                {
+                  "assignments": [
+                    796
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 796,
+                      "name": "instance",
+                      "nodeType": "VariableDeclaration",
+                      "overrides": null,
+                      "scope": 806,
+                      "src": "139:21:11",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_FindTheOwner_$787",
+                        "typeString": "contract FindTheOwner"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 795,
+                        "name": "FindTheOwner",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 787,
+                        "src": "139:12:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_FindTheOwner_$787",
+                          "typeString": "contract FindTheOwner"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 800,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 798,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "NewExpression",
+                      "src": "163:16:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_creation_nonpayable$__$returns$_t_contract$_FindTheOwner_$787_$",
+                        "typeString": "function () returns (contract FindTheOwner)"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 797,
+                        "name": "FindTheOwner",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 787,
+                        "src": "167:12:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_FindTheOwner_$787",
+                          "typeString": "contract FindTheOwner"
+                        }
+                      }
+                    },
+                    "id": 799,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "163:18:11",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_FindTheOwner_$787",
+                      "typeString": "contract FindTheOwner"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "139:42:11"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 803,
+                        "name": "instance",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 796,
+                        "src": "202:8:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_FindTheOwner_$787",
+                          "typeString": "contract FindTheOwner"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_FindTheOwner_$787",
+                          "typeString": "contract FindTheOwner"
+                        }
+                      ],
+                      "id": 802,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "ElementaryTypeNameExpression",
+                      "src": "194:7:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_address_$",
+                        "typeString": "type(address)"
+                      },
+                      "typeName": {
+                        "id": 801,
+                        "name": "address",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "194:7:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": null,
+                          "typeString": null
+                        }
+                      }
+                    },
+                    "id": 804,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "194:17:11",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 794,
+                  "id": 805,
+                  "nodeType": "Return",
+                  "src": "187:24:11"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "5219cfa5",
+            "id": 807,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "newInstance",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 791,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "105:2:11"
+            },
+            "returnParameters": {
+              "id": 794,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 793,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 807,
+                  "src": "124:7:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 792,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "124:7:11",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "123:9:11"
+            },
+            "scope": 830,
+            "src": "84:132:11",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 828,
+              "nodeType": "Block",
+              "src": "294:99:11",
+              "statements": [
+                {
+                  "assignments": [
+                    817
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 817,
+                      "name": "instance",
+                      "nodeType": "VariableDeclaration",
+                      "overrides": null,
+                      "scope": 828,
+                      "src": "300:21:11",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_FindTheOwner_$787",
+                        "typeString": "contract FindTheOwner"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 816,
+                        "name": "FindTheOwner",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 787,
+                        "src": "300:12:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_FindTheOwner_$787",
+                          "typeString": "contract FindTheOwner"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 821,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 819,
+                        "name": "_instance",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 809,
+                        "src": "337:9:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 818,
+                      "name": "FindTheOwner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 787,
+                      "src": "324:12:11",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_contract$_FindTheOwner_$787_$",
+                        "typeString": "type(contract FindTheOwner)"
+                      }
+                    },
+                    "id": 820,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "324:23:11",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_FindTheOwner_$787",
+                      "typeString": "contract FindTheOwner"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "300:47:11"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    },
+                    "id": 826,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "arguments": [],
+                      "expression": {
+                        "argumentTypes": [],
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 822,
+                          "name": "instance",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 817,
+                          "src": "360:8:11",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_FindTheOwner_$787",
+                            "typeString": "contract FindTheOwner"
+                          }
+                        },
+                        "id": 823,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "completed",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 745,
+                        "src": "360:18:11",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_external_view$__$returns$_t_bool_$",
+                          "typeString": "function () view external returns (bool)"
+                        }
+                      },
+                      "id": 824,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "360:20:11",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "hexValue": "74727565",
+                      "id": 825,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "384:4:11",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "true"
+                    },
+                    "src": "360:28:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 815,
+                  "id": 827,
+                  "nodeType": "Return",
+                  "src": "353:35:11"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "b3154db0",
+            "id": 829,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "check",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 812,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 809,
+                  "name": "_instance",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 829,
+                  "src": "236:17:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 808,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "236:7:11",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 811,
+                  "name": "_player",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 829,
+                  "src": "255:15:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 810,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "255:7:11",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "235:36:11"
+            },
+            "returnParameters": {
+              "id": 815,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 814,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 829,
+                  "src": "288:4:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 813,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "288:4:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "287:6:11"
+            },
+            "scope": 830,
+            "src": "220:173:11",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 831,
+        "src": "49:346:11"
+      }
+    ],
+    "src": "0:396:11"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.2+commit.bacdbe57.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x278F7185426B46f675883e56b9F23Fcce0C9F2C1",
+      "transactionHash": "0xd5ed637a51bc39f7402bd78103adbb422fb52202f56ebcdb90aeba5a779dcfd2"
+    }
+  },
+  "schemaVersion": "3.2.2",
+  "updatedAt": "2020-09-23T19:10:02.175Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

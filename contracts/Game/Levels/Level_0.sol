@@ -6,11 +6,15 @@ contract TakeOwneship {
 
   using SafeMath for uint256;
 
-  mapping (address => bool) owners;
+  address public owner;
   mapping (address => uint256) deposits;
 
+  constructor () public {
+    owner = msg.sender;
+  }
+
   modifier onlyOwners () {
-    require (owners[msg.sender] == true);
+    require (owner == msg.sender);
     _;
   }
 
@@ -24,7 +28,7 @@ contract TakeOwneship {
 
   function claimOwnership () public {
     require (deposits[msg.sender] > 0.1 ether);
-    owners[msg.sender] = true;
+    owner = msg.sender;
     _withdraw();
   }
 }

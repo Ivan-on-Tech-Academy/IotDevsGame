@@ -1,0 +1,668 @@
+{
+  "contractName": "Imports",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "random",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "claimOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "deposit",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getPassword",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "player",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "targetAddress",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "r",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "setPassword",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "timer",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "unlockA",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "_n",
+          "type": "uint8"
+        }
+      ],
+      "name": "unlockB",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_n",
+          "type": "uint256"
+        }
+      ],
+      "name": "unlockC",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.2+commit.bacdbe57\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"random\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"claimOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"deposit\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getPassword\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"player\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"targetAddress\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"r\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"setPassword\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"timer\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"unlockA\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"_n\",\"type\":\"uint8\"}],\"name\":\"unlockB\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_n\",\"type\":\"uint256\"}],\"name\":\"unlockC\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/dan/Documents/Coding/Solidity/New_Projects/Contracts/IotDevsGame/contracts/Game/utils/Imports.sol\":\"Imports\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/dan/Documents/Coding/Solidity/New_Projects/Contracts/IotDevsGame/contracts/Game/Levels/0.Welcome.sol\":{\"keccak256\":\"0x5b318609bdf02227e9cd5b4f9e97707b798d44e4360ce8ce850d5f2fb4be20a1\",\"urls\":[\"bzz-raw://32fe0513553231308d5b95ff6603f507c4ae44e0c1421e54bd8e2473851d801d\",\"dweb:/ipfs/QmPtrXne6wdedhTcdw2sJu5Ecysj17tdQJL5vvPyrgyuvd\"]},\"/Users/dan/Documents/Coding/Solidity/New_Projects/Contracts/IotDevsGame/contracts/Game/Levels/Level_0.sol\":{\"keccak256\":\"0x36f48095a22f5e5b98d481a533f34c81fd7f9831acebb3b5d453f4b2a8c1df1c\",\"urls\":[\"bzz-raw://2570f15caf72afe0dde9846d3022c4090705a8a2d45e9e02d88d83c38f5d831f\",\"dweb:/ipfs/QmPVFZ6UKRxErMWTA2qt85A1k9hpHmkRPyHNogSqWqjEDr\"]},\"/Users/dan/Documents/Coding/Solidity/New_Projects/Contracts/IotDevsGame/contracts/Game/Levels/Level_1.sol\":{\"keccak256\":\"0xe596778dbc278d1257d88efe6a646d0a96d549af962f68ad378066998cdcbb5c\",\"urls\":[\"bzz-raw://49339227c2d12b34aeabb17bf1e9cb5462b7a7ea44669e20cafa191a57295488\",\"dweb:/ipfs/QmZkkTj36zdbBp7yuzkSzTekCvZtTrGcue3jM9G69boguP\"]},\"/Users/dan/Documents/Coding/Solidity/New_Projects/Contracts/IotDevsGame/contracts/Game/Levels/Level_2.sol\":{\"keccak256\":\"0xe385b8ff6675ed3e9ae8b8cf202588534079eecc92ecfa2a80f49e87923ae7c6\",\"urls\":[\"bzz-raw://d4d3995a2b58ec3c2bf9b9010ea25eba9cb4c6b27fc4fda87492060a5ef65c07\",\"dweb:/ipfs/QmPDzRBKDW4BBA5yJ89i53uBrSNfuoLLixpUtDU1GrKBnJ\"]},\"/Users/dan/Documents/Coding/Solidity/New_Projects/Contracts/IotDevsGame/contracts/Game/Levels/Level_3.sol\":{\"keccak256\":\"0x87f7cbb2477d5ff52c2e09f8385ff18fcdccca708660cb1df9f54d1371469288\",\"urls\":[\"bzz-raw://28ef7cb9ae9770b6601cf270c0f2eb8c0f05b1044e5d45b12412fbd55e71ff29\",\"dweb:/ipfs/QmeMgMJNjN6D4LHXWHviViUswWrL77eNhAkJzg65EFdtSH\"]},\"/Users/dan/Documents/Coding/Solidity/New_Projects/Contracts/IotDevsGame/contracts/Game/Levels/Level_4.sol\":{\"keccak256\":\"0xc9fe26bf890cc5aee83a9a61d31acf552c74b6a7f513cdf72f11bbb1db74fe35\",\"urls\":[\"bzz-raw://61de8de984a0aa89f6bec7e431a87226b4a91cc0af8faa2b6890def4b3518152\",\"dweb:/ipfs/QmXoEVf4kaeCrCTLd128cpPCwmZWzg3asijqtL1EWUcV9d\"]},\"/Users/dan/Documents/Coding/Solidity/New_Projects/Contracts/IotDevsGame/contracts/Game/Levels/Level_5.sol\":{\"keccak256\":\"0x176c0790e9de6bb570d602103c969ddd7390683fb1d56c1dbf07dcd3b5c3ecd1\",\"urls\":[\"bzz-raw://8eef912050b469ad411d094a7a61a897f2ca45eaf17742269d7365a5aebc05b8\",\"dweb:/ipfs/QmahUTQhzjbzCpw2JgqbSmEk1x6TQ5qZ6r19CLtVL8FGDm\"]},\"/Users/dan/Documents/Coding/Solidity/New_Projects/Contracts/IotDevsGame/contracts/Game/utils/Imports.sol\":{\"keccak256\":\"0x2630c407cdc184a3804e8b2f9dd33cb58cd7ac09629e5763a53c86d631bf1f0d\",\"urls\":[\"bzz-raw://f5a6880a35173a4efeefe974d66d0b9906e0cf449e9497e3b371ab90bc23bf7c\",\"dweb:/ipfs/Qme1nyAVNNuH1iY6D1ynH7yWcQjj9LN8dEfZXTtmwWKgGn\"]},\"@openzeppelin/contracts/math/SafeMath.sol\":{\"keccak256\":\"0x9a9cf02622cd7a64261b10534fc3260449da25c98c9e96d1b4ae8110a20e5806\",\"urls\":[\"bzz-raw://2df142592d1dc267d9549049ee3317fa190d2f87eaa565f86ab05ec83f7ab8f5\",\"dweb:/ipfs/QmSkJtcfWo7c42KnL5hho6GFxK6HRNV91XABx1P7xDtfLV\"]}},\"version\":1}",
+  "bytecode": "0x60806040526000600460006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506002600b5534801561005757600080fd5b50610a2a806100676000396000f3fe6080604052600436106100915760003560e01c8063aea89bf411610059578063aea89bf4146101a7578063c707def6146101be578063cc8e2394146101fc578063d0e30db014610227578063ec45787c1461023157610091565b80632044ea5a146100965780634c54e1b5146100d15780634e71e0c814610162578063534d4ec3146101795780636c8ae38c14610190575b600080fd5b3480156100a257600080fd5b506100cf600480360360208110156100b957600080fd5b8101908080359060200190929190505050610296565b005b3480156100dd57600080fd5b50610120600480360360208110156100f457600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506103aa565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561016e57600080fd5b506101776103e8565b005b34801561018557600080fd5b5061018e61049c565b005b34801561019c57600080fd5b506101a561054a565b005b3480156101b357600080fd5b506101bc6105d7565b005b3480156101ca57600080fd5b506101fa600480360360208110156101e157600080fd5b81019080803560ff169060200190929190505050610624565b005b34801561020857600080fd5b50610211610748565b6040518082815260200191505060405180910390f35b61022f61078e565b005b34801561023d57600080fd5b506102806004803603602081101561025457600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610825565b6040518082815260200191505060405180910390f35b6000600660003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff1660ff1614156102f357600080fd5b600960003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205481146103465761034161054a565b6103a7565b61034e61083d565b6001600760003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505b50565b60036020528060005260406000206000915090508060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905081565b67016345785d8a0000600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020541161043b57600080fd5b60018060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff02191690831515021790555061049a610887565b565b67016345785d8a0000600860003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054116104ef57600080fd5b6032600560003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff021916908360ff160217905550565b600060ff428161055657fe5b06905080600960003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055507fb863bd3729546d4186efd003c567348f9deb7087f4632b9046c39adb8008c19f816040518082815260200191505060405180910390a150565b60004242019050806000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000208190555050565b600560003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff1660ff168160ff161061068257600080fd5b60008160ff16600560003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff1660ff16816106df57fe5b0660ff16146106ed57600080fd5b80600660003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff021916908360ff16021790555050565b60008060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905090565b6107e034600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205461096c90919063ffffffff16565b600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002081905550565b600a6020528060005260406000206000915090505481565b61012c4201600a60003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002081905550565b60011515600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff161515146108e457600080fd5b3373ffffffffffffffffffffffffffffffffffffffff166108fc600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549081150290604051600060405180830381858888f19350505050158015610969573d6000803e3d6000fd5b50565b6000808284019050838110156109ea576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601b8152602001807f536166654d6174683a206164646974696f6e206f766572666c6f77000000000081525060200191505060405180910390fd5b809150509291505056fea2646970667358221220d0e82defcf18cfb19998b32173579bad89749bbf311d65ba3330e6b7a28d84fa64736f6c63430006020033",
+  "deployedBytecode": "0x6080604052600436106100915760003560e01c8063aea89bf411610059578063aea89bf4146101a7578063c707def6146101be578063cc8e2394146101fc578063d0e30db014610227578063ec45787c1461023157610091565b80632044ea5a146100965780634c54e1b5146100d15780634e71e0c814610162578063534d4ec3146101795780636c8ae38c14610190575b600080fd5b3480156100a257600080fd5b506100cf600480360360208110156100b957600080fd5b8101908080359060200190929190505050610296565b005b3480156100dd57600080fd5b50610120600480360360208110156100f457600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506103aa565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b34801561016e57600080fd5b506101776103e8565b005b34801561018557600080fd5b5061018e61049c565b005b34801561019c57600080fd5b506101a561054a565b005b3480156101b357600080fd5b506101bc6105d7565b005b3480156101ca57600080fd5b506101fa600480360360208110156101e157600080fd5b81019080803560ff169060200190929190505050610624565b005b34801561020857600080fd5b50610211610748565b6040518082815260200191505060405180910390f35b61022f61078e565b005b34801561023d57600080fd5b506102806004803603602081101561025457600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610825565b6040518082815260200191505060405180910390f35b6000600660003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff1660ff1614156102f357600080fd5b600960003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205481146103465761034161054a565b6103a7565b61034e61083d565b6001600760003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505b50565b60036020528060005260406000206000915090508060000160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905081565b67016345785d8a0000600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020541161043b57600080fd5b60018060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff02191690831515021790555061049a610887565b565b67016345785d8a0000600860003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054116104ef57600080fd5b6032600560003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff021916908360ff160217905550565b600060ff428161055657fe5b06905080600960003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055507fb863bd3729546d4186efd003c567348f9deb7087f4632b9046c39adb8008c19f816040518082815260200191505060405180910390a150565b60004242019050806000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000208190555050565b600560003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff1660ff168160ff161061068257600080fd5b60008160ff16600560003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff1660ff16816106df57fe5b0660ff16146106ed57600080fd5b80600660003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff021916908360ff16021790555050565b60008060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905090565b6107e034600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205461096c90919063ffffffff16565b600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002081905550565b600a6020528060005260406000206000915090505481565b61012c4201600a60003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002081905550565b60011515600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff161515146108e457600080fd5b3373ffffffffffffffffffffffffffffffffffffffff166108fc600260003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549081150290604051600060405180830381858888f19350505050158015610969573d6000803e3d6000fd5b50565b6000808284019050838110156109ea576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252601b8152602001807f536166654d6174683a206164646974696f6e206f766572666c6f77000000000081525060200191505060405180910390fd5b809150509291505056fea2646970667358221220d0e82defcf18cfb19998b32173579bad89749bbf311d65ba3330e6b7a28d84fa64736f6c63430006020033",
+  "sourceMap": "250:103:10:-:0;;;490:3:2;453:41;;;;;;;;;;;;;;;;;;;;142:1:4;130:13;;250:103:10;8:9:-1;5:2;;;30:1;27;20:12;5:2;250:103:10;;;;;;;",
+  "deployedSourceMap": "250:103:10:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;849:192:3;;8:9:-1;5:2;;;30:1;27;20:12;5:2;849:192:3;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;849:192:3;;;;;;;;;;;;;;;;;:::i;:::-;;402:47:2;;8:9:-1;5:2;;;30:1;27;20:12;5:2;402:47:2;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;402:47:2;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;499:135:1;;8:9:-1;5:2;;;30:1;27;20:12;5:2;499:135:1;;;:::i;:::-;;423:112:3;;8:9:-1;5:2;;;30:1;27;20:12;5:2;423:112:3;;;:::i;:::-;;711:134;;8:9:-1;5:2;;;30:1;27;20:12;5:2;711:134:3;;;:::i;:::-;;97:120:0;;8:9:-1;5:2;;;30:1;27;20:12;5:2;97:120:0;;;:::i;:::-;;539:168:3;;8:9:-1;5:2;;;30:1;27;20:12;5:2;539:168:3;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;539:168:3;;;;;;;;;;;;;;;;;;;:::i;:::-;;221:93:0;;8:9:-1;5:2;;;30:1;27;20:12;5:2;221:93:0;;;:::i;:::-;;;;;;;;;;;;;;;;;;;294:104:1;;;:::i;:::-;;350:41:3;;8:9:-1;5:2;;;30:1;27;20:12;5:2;350:41:3;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;350:41:3;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;849:192;926:1;901:9;:21;911:10;901:21;;;;;;;;;;;;;;;;;;;;;;;;;:26;;;;892:36;;;;;;943:7;:19;951:10;943:19;;;;;;;;;;;;;;;;937:2;:25;934:103;;965:3;:1;:3::i;:::-;934:103;;;984:11;:8;:11::i;:::-;1026:4;1003:8;:20;1012:10;1003:20;;;;;;;;;;;;;;;;:27;;;;;;;;;;;;;;;;;;934:103;849:192;:::o;402:47:2:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;499:135:1:-;571:9;548:8;:20;557:10;548:20;;;;;;;;;;;;;;;;:32;539:42;;;;;;608:4;587:6;:18;594:10;587:18;;;;;;;;;;;;;;;;:25;;;;;;;;;;;;;;;;;;618:11;:9;:11::i;:::-;499:135::o;423:112:3:-;488:9;465:8;:20;474:10;465:20;;;;;;;;;;;;;;;;:32;456:42;;;;;;528:2;504:9;:21;514:10;504:21;;;;;;;;;;;;;;;;:26;;;;;;;;;;;;;;;;;;423:112::o;711:134::-;738:20;765:3;761;:7;;;;;;738:30;;796:12;774:7;:19;782:10;774:19;;;;;;;;;;;;;;;:34;;;;819:21;827:12;819:21;;;;;;;;;;;;;;;;;;711:134;:::o;97:120:0:-;134:16;171:3;153:15;:21;134:40;;204:8;180:9;:21;190:10;180:21;;;;;;;;;;;;;;;:32;;;;97:120;:::o;539:168:3:-;594:9;:21;604:10;594:21;;;;;;;;;;;;;;;;;;;;;;;;;589:26;;:2;:26;;;580:36;;;;;;657:1;651:2;627:26;;:9;:21;637:10;627:21;;;;;;;;;;;;;;;;;;;;;;;;;:26;;;;;;;;:31;;;623:48;;661:8;;;623:48;700:2;676:9;:21;686:10;676:21;;;;;;;;;;;;;;;;:26;;;;;;;;;;;;;;;;;;539:168;:::o;221:93:0:-;266:7;288:9;:21;298:10;288:21;;;;;;;;;;;;;;;;281:28;;221:93;:::o;294:104:1:-;358:35;383:9;358:8;:20;367:10;358:20;;;;;;;;;;;;;;;;:24;;:35;;;;:::i;:::-;335:8;:20;344:10;335:20;;;;;;;;;;;;;;;:58;;;;294:104::o;350:41:3:-;;;;;;;;;;;;;;;;;:::o;1045:75::-;1106:9;1100:3;:15;1080:5;:17;1086:10;1080:17;;;;;;;;;;;;;;;:35;;;;1045:75::o;402:93:1:-;273:4;251:26;;:6;:18;258:10;251:18;;;;;;;;;;;;;;;;;;;;;;;;;:26;;;242:36;;;;;;449:10:::1;:19;;:41;469:8;:20;478:10;469:20;;;;;;;;;;;;;;;;449:41;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39::::0;24:38:::1;77:16;74:1;67:27;5:2;449:41:1;402:93::o:0;874:176:16:-;932:7;951:9;967:1;963;:5;951:17;;991:1;986;:6;;978:46;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1042:1;1035:8;;;874:176;;;;:::o",
+  "source": "import \"../Levels/0.Welcome.sol\";\nimport \"../Levels/Level_0.sol\";\nimport \"../Levels/Level_1.sol\";\nimport \"../Levels/Level_2.sol\";\nimport \"../Levels/Level_3.sol\";\nimport \"../Levels/Level_4.sol\";\nimport \"../Levels/Level_5.sol\";\npragma solidity 0.6.2;\n\ncontract Imports\nis\nWelcome,\nTakeOwneship,\nEntrance,\nTheGreatHall,\nThinkBig,\nFindTheOwner,\nTestERC20\n{}\n",
+  "sourcePath": "/Users/dan/Documents/Coding/Solidity/New_Projects/Contracts/IotDevsGame/contracts/Game/utils/Imports.sol",
+  "ast": {
+    "absolutePath": "/Users/dan/Documents/Coding/Solidity/New_Projects/Contracts/IotDevsGame/contracts/Game/utils/Imports.sol",
+    "exportedSymbols": {
+      "Imports": [
+        997
+      ]
+    },
+    "id": 998,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "absolutePath": "/Users/dan/Documents/Coding/Solidity/New_Projects/Contracts/IotDevsGame/contracts/Game/Levels/0.Welcome.sol",
+        "file": "../Levels/0.Welcome.sol",
+        "id": 975,
+        "nodeType": "ImportDirective",
+        "scope": 998,
+        "sourceUnit": 55,
+        "src": "0:33:10",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/dan/Documents/Coding/Solidity/New_Projects/Contracts/IotDevsGame/contracts/Game/Levels/Level_0.sol",
+        "file": "../Levels/Level_0.sol",
+        "id": 976,
+        "nodeType": "ImportDirective",
+        "scope": 998,
+        "sourceUnit": 141,
+        "src": "34:31:10",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/dan/Documents/Coding/Solidity/New_Projects/Contracts/IotDevsGame/contracts/Game/Levels/Level_1.sol",
+        "file": "../Levels/Level_1.sol",
+        "id": 977,
+        "nodeType": "ImportDirective",
+        "scope": 998,
+        "sourceUnit": 241,
+        "src": "66:31:10",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/dan/Documents/Coding/Solidity/New_Projects/Contracts/IotDevsGame/contracts/Game/Levels/Level_2.sol",
+        "file": "../Levels/Level_2.sol",
+        "id": 978,
+        "nodeType": "ImportDirective",
+        "scope": 998,
+        "sourceUnit": 434,
+        "src": "98:31:10",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/dan/Documents/Coding/Solidity/New_Projects/Contracts/IotDevsGame/contracts/Game/Levels/Level_3.sol",
+        "file": "../Levels/Level_3.sol",
+        "id": 979,
+        "nodeType": "ImportDirective",
+        "scope": 998,
+        "sourceUnit": 463,
+        "src": "130:31:10",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/dan/Documents/Coding/Solidity/New_Projects/Contracts/IotDevsGame/contracts/Game/Levels/Level_4.sol",
+        "file": "../Levels/Level_4.sol",
+        "id": 980,
+        "nodeType": "ImportDirective",
+        "scope": 998,
+        "sourceUnit": 507,
+        "src": "162:31:10",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/dan/Documents/Coding/Solidity/New_Projects/Contracts/IotDevsGame/contracts/Game/Levels/Level_5.sol",
+        "file": "../Levels/Level_5.sol",
+        "id": 981,
+        "nodeType": "ImportDirective",
+        "scope": 998,
+        "sourceUnit": 575,
+        "src": "194:31:10",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 982,
+        "literals": [
+          "solidity",
+          "0.6",
+          ".2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "226:22:10"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 983,
+              "name": "Welcome",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 54,
+              "src": "270:7:10",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Welcome_$54",
+                "typeString": "contract Welcome"
+              }
+            },
+            "id": 984,
+            "nodeType": "InheritanceSpecifier",
+            "src": "270:7:10"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 985,
+              "name": "TakeOwneship",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 140,
+              "src": "279:12:10",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_TakeOwneship_$140",
+                "typeString": "contract TakeOwneship"
+              }
+            },
+            "id": 986,
+            "nodeType": "InheritanceSpecifier",
+            "src": "279:12:10"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 987,
+              "name": "Entrance",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 240,
+              "src": "293:8:10",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Entrance_$240",
+                "typeString": "contract Entrance"
+              }
+            },
+            "id": 988,
+            "nodeType": "InheritanceSpecifier",
+            "src": "293:8:10"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 989,
+              "name": "TheGreatHall",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 433,
+              "src": "303:12:10",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_TheGreatHall_$433",
+                "typeString": "contract TheGreatHall"
+              }
+            },
+            "id": 990,
+            "nodeType": "InheritanceSpecifier",
+            "src": "303:12:10"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 991,
+              "name": "ThinkBig",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 462,
+              "src": "317:8:10",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ThinkBig_$462",
+                "typeString": "contract ThinkBig"
+              }
+            },
+            "id": 992,
+            "nodeType": "InheritanceSpecifier",
+            "src": "317:8:10"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 993,
+              "name": "FindTheOwner",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 506,
+              "src": "327:12:10",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_FindTheOwner_$506",
+                "typeString": "contract FindTheOwner"
+              }
+            },
+            "id": 994,
+            "nodeType": "InheritanceSpecifier",
+            "src": "327:12:10"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 995,
+              "name": "TestERC20",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 574,
+              "src": "341:9:10",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_TestERC20_$574",
+                "typeString": "contract TestERC20"
+              }
+            },
+            "id": 996,
+            "nodeType": "InheritanceSpecifier",
+            "src": "341:9:10"
+          }
+        ],
+        "contractDependencies": [
+          54,
+          140,
+          240,
+          433,
+          462,
+          506,
+          574
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 997,
+        "linearizedBaseContracts": [
+          997,
+          574,
+          506,
+          462,
+          433,
+          240,
+          140,
+          54
+        ],
+        "name": "Imports",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 998,
+        "src": "250:103:10"
+      }
+    ],
+    "src": "0:354:10"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/dan/Documents/Coding/Solidity/New_Projects/Contracts/IotDevsGame/contracts/Game/utils/Imports.sol",
+    "exportedSymbols": {
+      "Imports": [
+        997
+      ]
+    },
+    "id": 998,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "absolutePath": "/Users/dan/Documents/Coding/Solidity/New_Projects/Contracts/IotDevsGame/contracts/Game/Levels/0.Welcome.sol",
+        "file": "../Levels/0.Welcome.sol",
+        "id": 975,
+        "nodeType": "ImportDirective",
+        "scope": 998,
+        "sourceUnit": 55,
+        "src": "0:33:10",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/dan/Documents/Coding/Solidity/New_Projects/Contracts/IotDevsGame/contracts/Game/Levels/Level_0.sol",
+        "file": "../Levels/Level_0.sol",
+        "id": 976,
+        "nodeType": "ImportDirective",
+        "scope": 998,
+        "sourceUnit": 141,
+        "src": "34:31:10",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/dan/Documents/Coding/Solidity/New_Projects/Contracts/IotDevsGame/contracts/Game/Levels/Level_1.sol",
+        "file": "../Levels/Level_1.sol",
+        "id": 977,
+        "nodeType": "ImportDirective",
+        "scope": 998,
+        "sourceUnit": 241,
+        "src": "66:31:10",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/dan/Documents/Coding/Solidity/New_Projects/Contracts/IotDevsGame/contracts/Game/Levels/Level_2.sol",
+        "file": "../Levels/Level_2.sol",
+        "id": 978,
+        "nodeType": "ImportDirective",
+        "scope": 998,
+        "sourceUnit": 434,
+        "src": "98:31:10",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/dan/Documents/Coding/Solidity/New_Projects/Contracts/IotDevsGame/contracts/Game/Levels/Level_3.sol",
+        "file": "../Levels/Level_3.sol",
+        "id": 979,
+        "nodeType": "ImportDirective",
+        "scope": 998,
+        "sourceUnit": 463,
+        "src": "130:31:10",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/dan/Documents/Coding/Solidity/New_Projects/Contracts/IotDevsGame/contracts/Game/Levels/Level_4.sol",
+        "file": "../Levels/Level_4.sol",
+        "id": 980,
+        "nodeType": "ImportDirective",
+        "scope": 998,
+        "sourceUnit": 507,
+        "src": "162:31:10",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/dan/Documents/Coding/Solidity/New_Projects/Contracts/IotDevsGame/contracts/Game/Levels/Level_5.sol",
+        "file": "../Levels/Level_5.sol",
+        "id": 981,
+        "nodeType": "ImportDirective",
+        "scope": 998,
+        "sourceUnit": 575,
+        "src": "194:31:10",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 982,
+        "literals": [
+          "solidity",
+          "0.6",
+          ".2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "226:22:10"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 983,
+              "name": "Welcome",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 54,
+              "src": "270:7:10",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Welcome_$54",
+                "typeString": "contract Welcome"
+              }
+            },
+            "id": 984,
+            "nodeType": "InheritanceSpecifier",
+            "src": "270:7:10"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 985,
+              "name": "TakeOwneship",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 140,
+              "src": "279:12:10",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_TakeOwneship_$140",
+                "typeString": "contract TakeOwneship"
+              }
+            },
+            "id": 986,
+            "nodeType": "InheritanceSpecifier",
+            "src": "279:12:10"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 987,
+              "name": "Entrance",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 240,
+              "src": "293:8:10",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Entrance_$240",
+                "typeString": "contract Entrance"
+              }
+            },
+            "id": 988,
+            "nodeType": "InheritanceSpecifier",
+            "src": "293:8:10"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 989,
+              "name": "TheGreatHall",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 433,
+              "src": "303:12:10",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_TheGreatHall_$433",
+                "typeString": "contract TheGreatHall"
+              }
+            },
+            "id": 990,
+            "nodeType": "InheritanceSpecifier",
+            "src": "303:12:10"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 991,
+              "name": "ThinkBig",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 462,
+              "src": "317:8:10",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ThinkBig_$462",
+                "typeString": "contract ThinkBig"
+              }
+            },
+            "id": 992,
+            "nodeType": "InheritanceSpecifier",
+            "src": "317:8:10"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 993,
+              "name": "FindTheOwner",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 506,
+              "src": "327:12:10",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_FindTheOwner_$506",
+                "typeString": "contract FindTheOwner"
+              }
+            },
+            "id": 994,
+            "nodeType": "InheritanceSpecifier",
+            "src": "327:12:10"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 995,
+              "name": "TestERC20",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 574,
+              "src": "341:9:10",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_TestERC20_$574",
+                "typeString": "contract TestERC20"
+              }
+            },
+            "id": 996,
+            "nodeType": "InheritanceSpecifier",
+            "src": "341:9:10"
+          }
+        ],
+        "contractDependencies": [
+          54,
+          140,
+          240,
+          433,
+          462,
+          506,
+          574
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 997,
+        "linearizedBaseContracts": [
+          997,
+          574,
+          506,
+          462,
+          433,
+          240,
+          140,
+          54
+        ],
+        "name": "Imports",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 998,
+        "src": "250:103:10"
+      }
+    ],
+    "src": "0:354:10"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.2+commit.bacdbe57.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.2.2",
+  "updatedAt": "2020-09-23T15:24:56.596Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

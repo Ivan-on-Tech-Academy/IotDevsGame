@@ -45,12 +45,16 @@ contract TheGreatHall {
     timer[msg.sender] = now + 5 minutes;
   }
 
-  function reset (address _player) internal {
+  function reset (address _player) external {
     delete(doorLockA[_player]);
     delete(doorLockB[_player]);
     delete(unlocked[_player]);
     delete(randomN[_player]);
     delete(timer[_player]);
+  }
+
+  function getTimer (address _player) external view returns (uint) {
+    return timer[_player];
   }
 
 }

@@ -14,13 +14,14 @@ interface ERC20Game {
 
 contract TestERC20  {
 
+  bool public completed;
   bytes32 constant symbolResult = 0x27fd9bb70fcea8125f7e0ba4eaeda4fb5ff28f5535e452dc1b70a42f567f4d75;
 
-  function playERC (address _ercImplementation) internal view returns (bool) {
+  function playERC (address _ercImplementation) internal {
     ERC20Game impl = ERC20Game(_ercImplementation);
     bytes32 sym = keccak256(abi.encodePacked(impl.symbol()));
     uint balance = impl.balanceOf(address(this));
     require (sym == symbolResult && balance == 10**18 );
-    return true;
+    completed = true;
   }
 }

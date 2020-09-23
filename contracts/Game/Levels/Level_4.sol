@@ -13,6 +13,7 @@ pragma solidity 0.6.2;
 
 contract FindTheOwner {
 
+  bool public completed;
   bytes32 constant result = 0x61251af2a34c4b856276127a6d85e236c257545c8bd5011ac4f0c05c15327a7d;
 
   function findIt (address _owner) internal pure returns (bool) {

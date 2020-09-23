@@ -1,5 +1,4 @@
 import "@openzeppelin/contracts/math/SafeMath.sol";
-import "./Bank.sol";
 
 pragma solidity 0.6.2;
 
@@ -10,19 +9,12 @@ contract Players {
 
   struct Player {
     uint256 playerLevel;
-    mapping(uint => bool) completeLevels;
     bool isPlayer;
+    mapping(address => address) instanceByLvl; // save the instance address for _lvl address
+    mapping(address => bool) completeLevels; // if lvl is complete = true
   }
 
   mapping (address => Player) public players;
-
-  /**
-  * @dev Require player is registered.
-  */
-  modifier onlyPlayer () {
-    require (players[msg.sender].isPlayer == true,"No such player");
-    _;
-  }
 
   /**
   * @dev Enable a new player.
@@ -36,8 +28,8 @@ contract Players {
   /**
   * @dev A player can disable itself.
   */
-  function removePlayer () public onlyPlayer {
-    delete(players[msg.sender].isPlayer);
+  function removePlayer () public   {
+    delete(players[msg.sender]);
   }
 
 
