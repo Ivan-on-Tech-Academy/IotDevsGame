@@ -5,10 +5,12 @@ pragma solidity 0.6.2;
 */
 
 contract ThinkBig {
+
+    bool public completed;
     uint256 a = 2;
 
     function go (uint256 _n) internal returns (bool) {
         require (_n > 0 && _n*a < a, "failed");
-        return true;
+        completed = true;
     }
 }

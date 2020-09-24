@@ -14,6 +14,7 @@ contract Entrance {
 
   struct playerStruct {
     address  targetAddress;
+    bool result;
   }
   mapping (address => playerStruct) public player;
   playerContract usr = playerContract (0x0);
@@ -24,7 +25,7 @@ contract Entrance {
     player[msg.sender].targetAddress = randomAddress();
     usr.setData(player[msg.sender].targetAddress);
     require (address(player[msg.sender].targetAddress).balance > 0,"Target balance should be > than 0");
-    return true;
+    player[msg.sender].result = true;
   }
 
   function setInterface (address _playerContractAddress) private {
@@ -33,5 +34,9 @@ contract Entrance {
 
   function randomAddress () private view returns (address){
       return address(uint160(uint256(now)));
-    }
+  }
+
+  function getResult (address _player) external view returns (bool) {
+    return player[_player].result;
+  }
 }

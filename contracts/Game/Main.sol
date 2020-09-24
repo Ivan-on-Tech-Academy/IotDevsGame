@@ -1,100 +1,73 @@
-import "./utils/Imports.sol";
-import "../Game_Controls/Players.sol";
 import "../Game_Controls/Bank.sol";
+import "../Game_Controls/Players.sol";
 import "@openzeppelin/contracts/math/SafeMath.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 
-/**
-* @dev Player must registere itself to play.
-*      Player must call addPlayer().
-*/
+
+interface DeploymentInterface {
+  function newInstance() external returns (address);
+  function check (address _instance, address _player) external returns (bool);
+}
 
 pragma solidity 0.6.2;
 
-contract Main is Players, Bank, Imports {
+contract Main is Players, Ownable, Bank {
 
   using SafeMath for uint256;
 
+  event instanceCreated (address _player,address _deployer,address _instance);
+  event instanceCompleted (address _player,address _deployer,address _instance, bool _result);
+
+  // Returns true if the game is registered.
+  // Only registered levels can deploy instances.
+  mapping (address => bool) public activeLevel;
+
+  // Owner can add levels.
+  function addLevel (address [] memory _levels) public onlyOwner {
+    for (uint i = 0; i < _levels.length; i++){
+      activeLevel[_levels[i]] = true;
+    }
+  }
+
   uint256 constant rewardAmount = 10 ** 19; // 10 tokens
 
-  constructor () Bank() public {}
-
-  function welcome (uint256 _password) public onlyPlayer {
-    bool result = _welcomePlayer(_password);
-    if (result == true) canPay(0);
+  constructor (address [] memory _levels) Bank() public {
+    addLevel(_levels);
   }
 
-  /**
-  * @dev Contract can be found in Game > Levels > Level_0.
-  *      lvl = 0;
-  */
-  function playLevel0 (address _playerContractAddress) public onlyPlayer {
-    ent_0(_playerContractAddress);
-    canPay(0);
-  }
 
-  /**
-  * @dev Contract can be found in Game > Levels > Level_1.
-  *      lvl = 1;
-  */
-  function playLevel1 () public onlyPlayer {
-    if (timer[msg.sender] >= now) {
-      canPay(1);
-    } else {
-      reset (msg.sender);
+  // Main function
+  // Creates a new instance for game _level
+  function createNewInstance (address _level,address _deployer) public returns (address) {
+
+    // Require level is active
+    require(activeLevel[_level], 'not an active level');
+
+    // Check if player has already an instance for the _level
+    if(players[msg.sender].instanceByLvl[_level] != address(0)){
+      return players[msg.sender].instanceByLvl[_level];
     }
+
+    // Deploy new instance of the _level
+    DeploymentInterface implementation = DeploymentInterface(_deployer);
+    address instance = implementation.newInstance();
+    emit instanceCreated(msg.sender,_deployer,instance);
   }
 
-  /**
-  * @dev Contract can be found in Game > Levels > Level_2.
-  *      lvl = 2;
-  */
-  function playLevel2 (uint256 _n) public onlyPlayer {
-    bool check;
-    check = go(_n);
-    require (check);
-    canPay(2);
-  }
+  function checkResult (address _level,address _instance, address _deployer) public returns (bool) {
 
-  /**
-  * @dev Contract can be found in Game > Levels > Level_3.
-  *      lvl = 3;
-  */
-  function playLevel3 (address _owner) public onlyPlayer {
-    bool check;
-    check = findIt(_owner);
-    require (check);
-    canPay(3);
-  }
+    // Make sure lvl not already won
+    require(players[msg.sender].completeLevels[_level] == false);
 
-  /**
-  * @dev Contract can be found in Game > Levels > Level_4.
-  *      lvl = 4;
-  */
-  function playLevel4 (address _playerContractAddress) public onlyPlayer {
-    bool check;
-    check = playERC(_playerContractAddress);
-    require (check);
-    canPay(4);
-  }
+    DeploymentInterface implementation = DeploymentInterface(_deployer);
 
-  function playLevel5 () public onlyPlayer {
+    bool result = implementation.check(_instance,msg.sender);
 
-  }
-
-  /**
-  * @dev Verify that the _lvlN is not completed already.
-  *      Each time a level is completed and the IRT token is mint,
-  *      completedLevels get the _lvlN pushed.
-  *      It avoids muiltiple minting for the same level.
-  * @notice verifyCapOverflow() makes sure that no token is minted if
-  *         it overflows total token cap.
-  */
-  function canPay (uint256 _lvlN) private returns (bool){
-    if(players[msg.sender].completeLevels[_lvlN] == true) {
-      return false;
+    if(result) {
+      players[msg.sender].completeLevels[_level] = true;
+      mintIRT (msg.sender,rewardAmount);
     }
-    players[msg.sender].completeLevels[_lvlN] = true;
-    mintIRT (msg.sender,rewardAmount);
+    emit instanceCompleted (msg.sender,_deployer,_instance,result);
   }
 
   /**
@@ -102,7 +75,7 @@ contract Main is Players, Bank, Imports {
   * @param _amount Has to be 10 ** 18 or mutiple.
   * @notice _amount 1.2 IRT will result in 1 IRT burnt.
   */
-  function levelUp (uint256 _amount) public onlyPlayer {
+  function levelUp (uint256 _amount) public   {
     require (_amount >= 10 ** 18);
     uint256 base = _amount.div(1 ether);
     uint256 toBurn = base * (10**18);
