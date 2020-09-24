@@ -4,9 +4,9 @@ import './Level_3.sol';
 
 contract ThinkBigDeployer {
 
-  function newInstance () public returns (address) {
+  function newInstance () public returns (ThinkBig) {
     ThinkBig instance = new ThinkBig();
-    return address(instance);
+    return instance;
   }
 
   function check (address _instance, address _player) public returns (bool) {

@@ -4,9 +4,9 @@ import './Level_2.sol';
 
 contract TheGreatHallDeployer {
 
-  function newInstance () public returns (address) {
+  function newInstance () public returns (TheGreatHall) {
     TheGreatHall instance = new TheGreatHall();
-    return address(instance);
+    return instance;
   }
 
   function check (address _instance, address _player) public returns (bool) {

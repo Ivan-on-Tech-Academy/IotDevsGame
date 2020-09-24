@@ -4,9 +4,9 @@ import './Level_5.sol';
 
 contract TestERC20Deployer {
 
-  function newInstance () public returns (address) {
+  function newInstance () public returns (TestERC20) {
     TestERC20 instance = new TestERC20();
-    return address(instance);
+    return instance;
   }
 
   function check (address _instance, address _player) public returns (bool) {
