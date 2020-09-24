@@ -16,5 +16,16 @@ module.exports = function(deployer) {
   deployer.deploy(ThinkBigDeployer);
   deployer.deploy(FindTheOwnerDeployer);
   deployer.deploy(TestERC20Deployer);
-  deployer.deploy(Main, []);
+  deployer.deploy(
+    Main,
+    [
+      WelcomeDeployer.address,
+      TakeOwneshipDeployer.address,
+      EntranceDeployer.address,
+      TheGreatHallDeployer.address,
+      ThinkBigDeployer.address,
+      FindTheOwnerDeployer.address,
+      TestERC20Deployer.address,
+  ]
+  );
 };

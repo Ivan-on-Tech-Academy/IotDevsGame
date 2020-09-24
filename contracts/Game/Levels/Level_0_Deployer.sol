@@ -4,9 +4,9 @@ import './Level_0.sol';
 
 contract TakeOwneshipDeployer {
 
-  function newInstance () public returns (address) {
+  function newInstance () public returns (TakeOwneship) {
     TakeOwneship instance = new TakeOwneship();
-    return address(instance);
+    return instance;
   }
 
   function check (address _instance, address _player) public returns (bool) {

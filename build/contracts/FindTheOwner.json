@@ -1282,7 +1282,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.2",
-  "updatedAt": "2020-09-23T19:07:26.343Z",
+  "updatedAt": "2020-09-24T13:34:40.382Z",
   "devdoc": {
     "details": "Because the blockchain is public, you can see who's the owner of the contract address above. One way to do this is to call the function getOwner(). The function below accepts a parameter _address which has to be the owner of the contract. The level is completed if the hashing of the address is equal to: 0x61251af2a34c4b856276127a6d85e236c257545c8bd5011ac4f0c05c15327a7d",
     "methods": {}

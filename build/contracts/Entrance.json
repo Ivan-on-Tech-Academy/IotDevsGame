@@ -3300,7 +3300,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.2",
-  "updatedAt": "2020-09-23T19:07:26.248Z",
+  "updatedAt": "2020-09-24T13:34:40.368Z",
   "devdoc": {
     "details": "Player has to create a contract that includes a function setData(),     this function will receive a randomly generated address.     The player has to send any amount of ether to that address.",
     "methods": {}

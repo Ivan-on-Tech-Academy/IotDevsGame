@@ -4,9 +4,9 @@ import './0_Welcome.sol';
 
 contract WelcomeDeployer {
 
-  function newInstance () public returns (address) {
+  function newInstance () public returns (Welcome) {
     Welcome instance = new Welcome();
-    return address(instance);
+    return instance;
   }
 
   function check (address _instance, address _player) public returns (bool) {

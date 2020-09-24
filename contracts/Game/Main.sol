@@ -5,7 +5,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 
 interface DeploymentInterface {
-  function newInstance() external view returns (address);
+  function newInstance() external returns (address);
   function check (address _instance, address _player) external returns (bool);
 }
 
@@ -15,9 +15,12 @@ contract Main is Players, Ownable, Bank {
 
   using SafeMath for uint256;
 
+  event instanceCreated (address _player,address _deployer,address _instance);
+  event instanceCompleted (address _player,address _deployer,address _instance, bool _result);
+
   // Returns true if the game is registered.
   // Only registered levels can deploy instances.
-  mapping (address => bool) activeLevel;
+  mapping (address => bool) public activeLevel;
 
   // Owner can add levels.
   function addLevel (address [] memory _levels) public onlyOwner {
@@ -35,10 +38,10 @@ contract Main is Players, Ownable, Bank {
 
   // Main function
   // Creates a new instance for game _level
-  function createNewInstance (address _level) public returns (address){
+  function createNewInstance (address _level,address _deployer) public returns (address) {
 
     // Require level is active
-    require(activeLevel[_level]);
+    require(activeLevel[_level], 'not an active level');
 
     // Check if player has already an instance for the _level
     if(players[msg.sender].instanceByLvl[_level] != address(0)){
@@ -46,17 +49,17 @@ contract Main is Players, Ownable, Bank {
     }
 
     // Deploy new instance of the _level
-    DeploymentInterface implementation = DeploymentInterface(_level);
+    DeploymentInterface implementation = DeploymentInterface(_deployer);
     address instance = implementation.newInstance();
-    return instance;
+    emit instanceCreated(msg.sender,_deployer,instance);
   }
 
-  function checkResult (address _level,address _instance) public returns (bool) {
+  function checkResult (address _level,address _instance, address _deployer) public returns (bool) {
 
     // Make sure lvl not already won
     require(players[msg.sender].completeLevels[_level] == false);
 
-    DeploymentInterface implementation = DeploymentInterface(_instance);
+    DeploymentInterface implementation = DeploymentInterface(_deployer);
 
     bool result = implementation.check(_instance,msg.sender);
 
@@ -64,6 +67,7 @@ contract Main is Players, Ownable, Bank {
       players[msg.sender].completeLevels[_level] = true;
       mintIRT (msg.sender,rewardAmount);
     }
+    emit instanceCompleted (msg.sender,_deployer,_instance,result);
   }
 
   /**
