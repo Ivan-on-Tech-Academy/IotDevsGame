@@ -23,51 +23,56 @@ contract Main is Players, Ownable, Bank {
   mapping (address => bool) public activeLevel;
 
   // Owner can add levels.
-  function addLevel (address [] memory _levels) public onlyOwner {
-    for (uint i = 0; i < _levels.length; i++){
-      activeLevel[_levels[i]] = true;
+  function addLevel (address [] memory _deployer) public onlyOwner {
+    for (uint i = 0; i < _deployer.length; i++){
+      activeLevel[_deployer[i]] = true;
     }
   }
 
   uint256 constant rewardAmount = 10 ** 19; // 10 tokens
 
-  constructor (address [] memory _levels) Bank() public {
-    addLevel(_levels);
+  constructor (address [] memory _deployer) Bank() public {
+    addLevel(_deployer);
   }
 
 
   // Main function
   // Creates a new instance for game _level
-  function createNewInstance (address _level,address _deployer) public returns (address) {
+  function createNewInstance (address _deployer) public returns (address) {
 
     // Require level is active
-    require(activeLevel[_level], 'not an active level');
+    require(activeLevel[_deployer], 'not an active level');
+
+    // Make sure lvl not already won
+    require(players[msg.sender].completeLevels[_deployer] == false);
 
     // Check if player has already an instance for the _level
-    if(players[msg.sender].instanceByLvl[_level] != address(0)){
-      return players[msg.sender].instanceByLvl[_level];
+    if(players[msg.sender].instanceByLvl[_deployer] != address(0)){
+      delete(players[msg.sender].instanceByLvl[_deployer]);
     }
 
     // Deploy new instance of the _level
     DeploymentInterface implementation = DeploymentInterface(_deployer);
     address instance = implementation.newInstance();
+
+    players[msg.sender].instanceByLvl[_deployer] = instance;
+
     emit instanceCreated(msg.sender,_deployer,instance);
   }
 
-  function checkResult (address _level,address _instance, address _deployer) public returns (bool) {
-
-    // Make sure lvl not already won
-    require(players[msg.sender].completeLevels[_level] == false);
+  function checkResult (address _deployer) public {
 
     DeploymentInterface implementation = DeploymentInterface(_deployer);
 
-    bool result = implementation.check(_instance,msg.sender);
+    address instance = players[msg.sender].instanceByLvl[_deployer];
+
+    bool result = implementation.check(instance,msg.sender);
 
     if(result) {
-      players[msg.sender].completeLevels[_level] = true;
+      players[msg.sender].completeLevels[_deployer] = true;
       mintIRT (msg.sender,rewardAmount);
     }
-    emit instanceCompleted (msg.sender,_deployer,_instance,result);
+    emit instanceCompleted (msg.sender,_deployer,instance,result);
   }
 
   /**
