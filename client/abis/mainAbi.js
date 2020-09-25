@@ -1,6 +1,12 @@
-var abi = [
+var mainAbi = [
   {
-    "inputs": [],
+    "inputs": [
+      {
+        "internalType": "address[]",
+        "name": "_deployer",
+        "type": "address[]"
+      }
+    ],
     "stateMutability": "nonpayable",
     "type": "constructor"
   },
@@ -35,6 +41,25 @@ var abi = [
       {
         "indexed": true,
         "internalType": "address",
+        "name": "previousOwner",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "OwnershipTransferred",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
         "name": "from",
         "type": "address"
       },
@@ -59,13 +84,76 @@ var abi = [
     "inputs": [
       {
         "indexed": false,
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
+        "internalType": "address",
+        "name": "_player",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "_deployer",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "_instance",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "_result",
+        "type": "bool"
       }
     ],
-    "name": "random",
+    "name": "instanceCompleted",
     "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "_player",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "_deployer",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "_instance",
+        "type": "address"
+      }
+    ],
+    "name": "instanceCreated",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "activeLevel",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
   },
   {
     "inputs": [],
@@ -146,13 +234,6 @@ var abi = [
   },
   {
     "inputs": [],
-    "name": "claimOwnership",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [],
     "name": "decimals",
     "outputs": [
       {
@@ -191,32 +272,10 @@ var abi = [
   },
   {
     "inputs": [],
-    "name": "deposit",
-    "outputs": [],
-    "stateMutability": "payable",
-    "type": "function",
-    "payable": true
-  },
-  {
-    "inputs": [],
     "name": "endStaking",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "getPassword",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function",
-    "constant": true
   },
   {
     "inputs": [],
@@ -278,18 +337,12 @@ var abi = [
     "constant": true
   },
   {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "name": "player",
+    "inputs": [],
+    "name": "owner",
     "outputs": [
       {
         "internalType": "address",
-        "name": "targetAddress",
+        "name": "",
         "type": "address"
       }
     ],
@@ -324,13 +377,6 @@ var abi = [
   },
   {
     "inputs": [],
-    "name": "r",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [],
     "name": "removePlayer",
     "outputs": [],
     "stateMutability": "nonpayable",
@@ -338,7 +384,7 @@ var abi = [
   },
   {
     "inputs": [],
-    "name": "setPassword",
+    "name": "renounceOwnership",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -419,26 +465,6 @@ var abi = [
     "type": "function"
   },
   {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "name": "timer",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function",
-    "constant": true
-  },
-  {
     "inputs": [],
     "name": "totalSupply",
     "outputs": [
@@ -506,8 +532,14 @@ var abi = [
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "unlockA",
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "transferOwnership",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -515,38 +547,12 @@ var abi = [
   {
     "inputs": [
       {
-        "internalType": "uint8",
-        "name": "_n",
-        "type": "uint8"
+        "internalType": "address[]",
+        "name": "_deployer",
+        "type": "address[]"
       }
     ],
-    "name": "unlockB",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "_n",
-        "type": "uint256"
-      }
-    ],
-    "name": "unlockC",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "_password",
-        "type": "uint256"
-      }
-    ],
-    "name": "welcome",
+    "name": "addLevel",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -555,32 +561,18 @@ var abi = [
     "inputs": [
       {
         "internalType": "address",
-        "name": "_playerContractAddress",
+        "name": "_deployer",
         "type": "address"
       }
     ],
-    "name": "playLevel0",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "playLevel1",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
+    "name": "createNewInstance",
+    "outputs": [
       {
-        "internalType": "uint256",
-        "name": "_n",
-        "type": "uint256"
+        "internalType": "address",
+        "name": "",
+        "type": "address"
       }
     ],
-    "name": "playLevel2",
-    "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
   },
@@ -588,31 +580,11 @@ var abi = [
     "inputs": [
       {
         "internalType": "address",
-        "name": "_owner",
+        "name": "_deployer",
         "type": "address"
       }
     ],
-    "name": "playLevel3",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "_playerContractAddress",
-        "type": "address"
-      }
-    ],
-    "name": "playLevel4",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "playLevel5",
+    "name": "checkResult",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

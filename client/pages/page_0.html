@@ -6,7 +6,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script type="text/javascript" src="../web3.min.js"></script>
-    <script type="text/javascript" src="../abi.js"></script>
+    <script type="text/javascript" src="../abis/mainAbi.js"></script>
+    <script type="text/javascript" src="../abis/welcomeAbi.js"></script>
     <script src="../logic.js"></script>
     <link rel="stylesheet" href="../style.css">
   </head>
@@ -15,6 +16,8 @@
     <div class="row">
       <div class="col-1"></div>
       <div class="col-10">
+        <button type="button" class= 'pageId' id='0xB095D2a1Ea36acAdD24258420c0eAA0837b4da00'>Get New Instance</button>
+        <button type="button" id='checkResultButton'>Check result</button>
         <p>It is necessary for you to sign up in order to be able to play the game. <br><br>
         Open the console (Right click --->> Inspect --->> Console) <br>
         Type: <b>await game.methods.addPlayer().send({value:10**18})</b> <br>
@@ -24,6 +27,7 @@
       </p>
       </div>
       <div class="col-1"></div>
+
     </div>
     <footer class="footer"></footer>
   </body>

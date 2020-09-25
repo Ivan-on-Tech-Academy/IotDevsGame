@@ -4,9 +4,9 @@ import './Level_1.sol';
 
 contract EntranceDeployer {
 
-  function newInstance () public returns (address) {
+  function newInstance () public returns (Entrance) {
     Entrance instance = new Entrance();
-    return address(instance);
+    return instance;
   }
 
   function check (address _instance, address _player) public returns (bool) {

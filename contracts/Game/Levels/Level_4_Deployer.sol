@@ -4,9 +4,9 @@ import './Level_4.sol';
 
 contract FindTheOwnerDeployer {
 
-  function newInstance () public returns (address) {
+  function newInstance () public returns (FindTheOwner) {
     FindTheOwner instance = new FindTheOwner();
-    return address(instance);
+    return instance;
   }
 
   function check (address _instance, address _player) public returns (bool) {
