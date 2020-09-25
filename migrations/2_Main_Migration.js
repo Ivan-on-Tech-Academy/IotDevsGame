@@ -7,16 +7,16 @@ const ThinkBigDeployer = artifacts.require("ThinkBigDeployer");
 const FindTheOwnerDeployer = artifacts.require("FindTheOwnerDeployer");
 const TestERC20Deployer = artifacts.require("TestERC20Deployer");
 
-module.exports = function(deployer) {
+module.exports = async function(deployer) {
 
-  deployer.deploy(WelcomeDeployer);
-  deployer.deploy(TakeOwneshipDeployer);
-  deployer.deploy(EntranceDeployer);
-  deployer.deploy(TheGreatHallDeployer);
-  deployer.deploy(ThinkBigDeployer);
-  deployer.deploy(FindTheOwnerDeployer);
-  deployer.deploy(TestERC20Deployer);
-  deployer.deploy(
+  await deployer.deploy(WelcomeDeployer);
+  await deployer.deploy(TakeOwneshipDeployer);
+  await deployer.deploy(EntranceDeployer);
+  await deployer.deploy(TheGreatHallDeployer);
+  await deployer.deploy(ThinkBigDeployer);
+  await deployer.deploy(FindTheOwnerDeployer);
+  await deployer.deploy(TestERC20Deployer);
+  await deployer.deploy(
     Main,
     [
       WelcomeDeployer.address,

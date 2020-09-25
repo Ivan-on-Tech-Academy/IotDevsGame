@@ -1,31 +1,35 @@
-const Players = artifacts.require('Players');
+const Main = artifacts.require('Main');
 const truffleAssert = require('truffle-assertions');
 
 contract('Players', (accounts) => {
 
-  var instance;
+  var mainInstance;
   var oneToken;
+  var player = accounts[0];
 
-  before ('Set up instance', async () => {
-    instance = await Players.new();
+  before('Set up instance', async () => {
+    mainInstance = await Main.new([]);
     oneToken = await web3.utils.toWei("1", 'ether');
   })
 
-  it ('Should add a new player', async () => {
-    await instance.addPlayer({from:accounts[0],value:oneToken});
-    const Player = await instance.players(accounts[0]);
-    assert.equal(Player.isPlayer,true,'player not initialized');
-    assert.equal(Player.playerLevel,0,'player level should be 0');
+  it('Should add a new player', async () => {
+    await mainInstance.registerNewPlayer();
+    const Main = await mainInstance.players(player);
+    assert(Main.tokenId > 0,'player not initialized');
+    assert.equal(Main.playerLevel,0,'player level should be 0');
   })
 
-  it ('Should remove a player', async () => {
-    await instance.removePlayer({from:accounts[0]});
-    const Player = await instance.players(accounts[0]);
-    assert.equal(Player.isPlayer,false,'player not removed');
+  it('Should have got the ERC721 token', async () => {
+    const Main = await mainInstance.players(player);
+    let tokenIdPlayer = Main.tokenId;
+    let ownerOf = await mainInstance.ownerOf(tokenIdPlayer);
+    assert.equal(ownerOf,player,'tokenOwner mismatch');
   })
 
-  it('Should make sure these txs fail', async () => {
-    truffleAssert.fails(instance.addPlayer({from:accounts[0],value:oneToken/2}),"Register a new player costs 1 ether");
-    truffleAssert.fails(instance.removePlayer({from:accounts[0]}),"No such player");
+  it('Should level the player up', async () => {
+    await mainInstance.mock();
+    const Main = await mainInstance.players(player);
+    assert.equal(Main.playerLevel,1,'player level should be 1');
   })
+
 })
