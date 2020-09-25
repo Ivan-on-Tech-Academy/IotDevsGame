@@ -2030,7 +2030,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.2",
-  "updatedAt": "2020-09-25T15:26:04.612Z",
+  "updatedAt": "2020-09-25T15:55:20.840Z",
   "devdoc": {
     "details": "Create a contract that mints 1 ERC20 token to the address of this contract.Once your contract has been created and the erc minted, call the function in main.",
     "methods": {}
