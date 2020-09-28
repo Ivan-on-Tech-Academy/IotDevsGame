@@ -1,6 +1,13 @@
 var web3 = new Web3(Web3.givenProvider);
 var gameInstance;
 var player = {};
+var playerHelp = function ()
+{
+  console.log('%cHere a list of command for you:', 'color:yellow; font-weight: bold;');
+  console.log('To display the ABI type:' + ' ' + '%cgame.methods' ,'color:red; font-weight: bold;');
+  console.log('To send a tx type:' + ' ' + '%cgame.methods.functionName(@params).send({value:})' ,'color:red; font-weight: bold;');
+  console.log('To call a view function and see the returned values type:' + ' ' + '%cawait game.methods.functionName.call()' ,'color:red; font-weight: bold;');
+}
 
 $(document).ready( function () {
   connect();
@@ -8,9 +15,13 @@ $(document).ready( function () {
   function connect () {
     window.ethereum.enable().then(function(accounts){
       game = new web3.eth.Contract(mainAbi, "0x5fB831Cf44b64e6c05B3D0e77Ff8A8Cf0e8c49Db", {from: accounts[0]});
-
     });
-    setTimeout(console.clear,1500);
+
+    console.log(
+      '%cWelcome! ' + '%cClick ' + '%cthe ' + '%cbutton ' + '%cGet ' + '%cNew ' + '%cInstance ' + '%cto ' + '%cstart ' + '%ca ' + '%cnew ' + '%cgame ',
+      "color:red; font-size: 20px","color:blue; font-size: 20px","color:red; font-size: 20px","color:blue; font-size: 20px","color:red; font-size: 20px","color:blue; font-size: 20px",
+      "color:red; font-size: 20px","color:blue; font-size: 20px","color:red; font-size: 20px","color:blue; font-size: 20px","color:red; font-size: 20px","color:blue; font-size: 20px"
+    );
 
     $(".pageId").click(function(){
       gameId = this.id;
@@ -77,11 +88,18 @@ $(document).ready( function () {
       console.log(result);
       if(!error){
         if(result.returnValues._result == true) {
-          console.log('You won');
+          console.log(
+            '%cY' + '%co' + '%cu' + '%cw' + '%co' + '%cn',
+            "color:red; font-size: 20px","color:blue; font-size: 20px","color:red; font-size: 20px","color:blue; font-size: 20px",
+            "color:red; font-size: 20px","color:blue; font-size: 20px"
+          );
+          let playerLevel = game.methods.getPlayerLevel.call(account);
+          console.log('You are now level' + ' ' + playerLevel);
         } else {
           console.log('Try again');
         }
       }
     })
   }
+
 })
