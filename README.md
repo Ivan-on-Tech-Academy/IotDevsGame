@@ -4,33 +4,28 @@
 
 ## How does it work?
 
-Main.sol is the main contract. <br>
-Mentors can create new contracts (quests) to test player's fundaments,logic, and in general Solidity skills. <br>
-Each complete game will reward the student with 1 ERC20 IvanOnToken (IRT). <br>
-The player has to burn the tokens to level up and unlock next quets. For each ITR burnt, the player level is increased by 1 (one). <br>
-Bank.sol handles the token creation and destuction. <br>
-All the token logic is already implemented. <br>
+Once a new player sign in, it gets a NFT token which represents her/him in the game. <br>
+For each level completed, the NFT will level up <br>
+Main.sol is the main contract which contains the functions necessary to create a new instance of the level, and check if the level has been successfully completed. <br>
+Mentors can create new contracts (levels) to test player's fundaments,logic, and in general Solidity skills. <br>
+A new level can be added to the game by the contract owner. <br>
+In order to have the level added to the game it needs two smart contract : <br>
+- The game instance; <br>
+- The game deployer; <br>
+
+## Instance && Deployer
+
+Once created the game, the developer needs also to provide a Deployer contract which must contain: <br>
+```function newInstance ()``` && ```function check (address _instance, address _player)``` <br>
+
+The ```function newInstance ()``` will deploy a new instance of the game; <br>
+The ```function check (address _instance, address _player)``` will verify if the level has been completed and will return true if positive. <br>
 
 
 ## Examples
 
-There are couple of quest examples in Contracts > Game > Easy.
+There are couple of quest examples in Contracts > Game > Levels.
 
-## How to develop
-
-Let's try to split the contract in 3 different folders based on the difficulty (Easy / Medium / Hard). <br>
-Once you create a new contract (quest) make sure to create a function in Main.sol that calls the quest and check the result (win/lose). <br>
-If the player wins make sure to _mint () a new ERC20 as per example in Main.sol. <br>
-
-
-<b>For each function outside your own games please do write comments as shown below to ensure consistency </b> <br>
-```
-/**
-* @dev Use @dev for comments that are useful to the other devs.
-* @param Do explain all param required. All of them.
-* @notice If something needs to be noticed.
-*/
-```
 ## Starter kit
 
 ### Register on Infura
