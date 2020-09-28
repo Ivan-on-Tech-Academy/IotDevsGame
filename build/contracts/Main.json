@@ -6935,12 +6935,12 @@
         }
       },
       "links": {},
-      "address": "0x557860796eA86d03DB31FE82A32af1DE22546E23",
-      "transactionHash": "0x14c65cc1c55f0e71b477b3b33511a34b2997a6085166951f322f67821b900475"
+      "address": "0x70B443dF242c3d021b093D3782D78a5AdCa16FC3",
+      "transactionHash": "0x88c624013cf80264af418f36b970f0e2389eb015f8f3222179d9e4918dbf0be8"
     }
   },
   "schemaVersion": "3.2.2",
-  "updatedAt": "2020-09-25T16:42:02.065Z",
+  "updatedAt": "2020-09-28T14:04:27.612Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {
