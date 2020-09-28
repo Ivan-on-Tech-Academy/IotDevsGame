@@ -22,9 +22,11 @@ The ```function newInstance ()``` will deploy a new instance of the game; <br>
 The ```function check (address _instance, address _player)``` will verify if the level has been completed and will return true if positive. <br>
 
 
+A test.js file needs to be provided with the two smart contracts. <br>
+
 ## Examples
 
-There are couple of quest examples in Contracts > Game > Levels.
+Contracts > Game > Levels.
 
 ## Starter kit
 
